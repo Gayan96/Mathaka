@@ -1,0 +1,3547 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#dc2626">
+<title>Mathaka Gift Shop · POS</title>
+<link rel="icon" href="data:,">
+<!-- Apply the saved theme before first paint (prevents a flash) -->
+<script>try{if(JSON.parse(localStorage.getItem('theme'))==='light')document.documentElement.classList.remove('dark')}catch(e){}</script>
+<!-- Compiled Tailwind CSS (utility classes only, embedded so the file works 100% offline) -->
+<style>
+@layer properties;
+@layer theme, base, components, utilities;
+@layer theme {
+:root, :host {
+--font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+"Noto Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+"Segoe UI Symbol", "Noto Color Emoji";
+--font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+"Courier New", monospace;
+--color-red-50: oklch(97.1% 0.013 17.38);
+--color-red-200: oklch(88.5% 0.062 18.334);
+--color-red-400: oklch(70.4% 0.191 22.216);
+--color-red-500: oklch(63.7% 0.237 25.331);
+--color-red-600: oklch(57.7% 0.245 27.325);
+--color-red-800: oklch(44.4% 0.177 26.899);
+--color-red-900: oklch(39.6% 0.141 25.723);
+--color-red-950: oklch(25.8% 0.092 26.042);
+--color-amber-50: oklch(98.7% 0.022 95.277);
+--color-amber-200: oklch(92.4% 0.12 95.746);
+--color-amber-400: oklch(82.8% 0.189 84.429);
+--color-amber-500: oklch(76.9% 0.188 70.08);
+--color-amber-600: oklch(66.6% 0.179 58.318);
+--color-amber-800: oklch(47.3% 0.137 46.201);
+--color-amber-950: oklch(27.9% 0.077 45.635);
+--color-emerald-50: oklch(97.9% 0.021 166.113);
+--color-emerald-200: oklch(90.5% 0.093 164.15);
+--color-emerald-400: oklch(76.5% 0.177 163.223);
+--color-emerald-500: oklch(69.6% 0.17 162.48);
+--color-emerald-600: oklch(59.6% 0.145 163.225);
+--color-emerald-800: oklch(43.2% 0.095 166.913);
+--color-emerald-950: oklch(26.2% 0.051 172.552);
+--color-neutral-100: oklch(97% 0 none);
+--color-neutral-200: oklch(92.2% 0 none);
+--color-neutral-300: oklch(87% 0 none);
+--color-neutral-400: oklch(70.8% 0 none);
+--color-neutral-500: oklch(55.6% 0 none);
+--color-neutral-600: oklch(43.9% 0 none);
+--color-neutral-700: oklch(37.1% 0 none);
+--color-neutral-800: oklch(26.9% 0 none);
+--color-neutral-900: oklch(20.5% 0 none);
+--color-neutral-950: oklch(14.5% 0 none);
+--color-black: #000;
+--color-white: #fff;
+--spacing: 0.25rem;
+--container-sm: 24rem;
+--container-lg: 32rem;
+--container-2xl: 42rem;
+--container-4xl: 56rem;
+--text-xs: 0.75rem;
+--text-xs--line-height: calc(1 / 0.75);
+--text-sm: 0.875rem;
+--text-sm--line-height: calc(1.25 / 0.875);
+--text-base: 1rem;
+--text-base--line-height: calc(1.5 / 1);
+--text-lg: 1.125rem;
+--text-lg--line-height: calc(1.75 / 1.125);
+--text-xl: 1.25rem;
+--text-xl--line-height: calc(1.75 / 1.25);
+--text-2xl: 1.5rem;
+--text-2xl--line-height: calc(2 / 1.5);
+--text-3xl: 1.875rem;
+--text-3xl--line-height: calc(2.25 / 1.875);
+--font-weight-medium: 500;
+--font-weight-semibold: 600;
+--font-weight-bold: 700;
+--font-weight-extrabold: 800;
+--tracking-tight: -0.025em;
+--tracking-wide: 0.025em;
+--tracking-widest: 0.1em;
+--leading-tight: 1.25;
+--leading-snug: 1.375;
+--leading-relaxed: 1.625;
+--radius-lg: 0.5rem;
+--radius-xl: 0.75rem;
+--radius-2xl: 1rem;
+--radius-3xl: 1.5rem;
+--animate-spin: spin 1s linear infinite;
+--blur-sm: 8px;
+--blur-xl: 24px;
+--default-transition-duration: 150ms;
+--default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+--default-font-family: var(--font-sans);
+--default-mono-font-family: var(--font-mono);
+}
+}
+@layer base {
+*, ::after, ::before, ::backdrop, ::file-selector-button {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+border: 0 solid;
+}
+html, :host {
+line-height: 1.5;
+-webkit-text-size-adjust: 100%;
+tab-size: 4;
+font-family: var(--default-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");
+font-feature-settings: var(--default-font-feature-settings, normal);
+font-variation-settings: var(--default-font-variation-settings, normal);
+-webkit-tap-highlight-color: transparent;
+}
+hr {
+height: 0;
+color: inherit;
+border-top-width: 1px;
+}
+abbr:where([title]) {
+-webkit-text-decoration: underline dotted;
+text-decoration: underline dotted;
+}
+h1, h2, h3, h4, h5, h6 {
+font-size: inherit;
+font-weight: inherit;
+}
+a {
+color: inherit;
+-webkit-text-decoration: inherit;
+text-decoration: inherit;
+}
+b, strong {
+font-weight: bolder;
+}
+code, kbd, samp, pre {
+font-family: var(--default-mono-font-family, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace);
+font-feature-settings: var(--default-mono-font-feature-settings, normal);
+font-variation-settings: var(--default-mono-font-variation-settings, normal);
+font-size: 1em;
+}
+small {
+font-size: 80%;
+}
+sub, sup {
+font-size: 75%;
+line-height: 0;
+position: relative;
+vertical-align: baseline;
+}
+sub {
+bottom: -0.25em;
+}
+sup {
+top: -0.5em;
+}
+table {
+text-indent: 0;
+border-color: inherit;
+border-collapse: collapse;
+}
+:-moz-focusring:where(:not(iframe)) {
+outline: auto;
+}
+progress {
+vertical-align: baseline;
+}
+summary {
+display: list-item;
+}
+ol, ul, menu {
+list-style: none;
+}
+img, svg, video, canvas, audio, iframe, embed, object {
+display: block;
+vertical-align: middle;
+}
+img, video {
+max-width: 100%;
+height: auto;
+}
+button, input, select, optgroup, textarea, ::file-selector-button {
+font: inherit;
+font-feature-settings: inherit;
+font-variation-settings: inherit;
+letter-spacing: inherit;
+color: inherit;
+border-radius: 0;
+background-color: transparent;
+opacity: 1;
+}
+:where(select:is([multiple], [size])) optgroup {
+font-weight: bolder;
+}
+:where(select:is([multiple], [size])) optgroup option {
+padding-inline-start: 20px;
+}
+::file-selector-button {
+margin-inline-end: 4px;
+}
+::placeholder {
+opacity: 1;
+}
+@supports (not (-webkit-appearance: -apple-pay-button))  or (contain-intrinsic-size: 1px) {
+::placeholder {
+color: currentcolor;
+@supports (color: color-mix(in lab, red, red)) {
+color: color-mix(in oklab, currentcolor 50%, transparent);
+}
+}
+}
+textarea {
+resize: vertical;
+}
+::-webkit-search-decoration {
+-webkit-appearance: none;
+}
+::-webkit-date-and-time-value {
+min-height: 1lh;
+text-align: inherit;
+}
+::-webkit-datetime-edit {
+display: inline-flex;
+}
+::-webkit-datetime-edit-fields-wrapper {
+padding: 0;
+}
+::-webkit-datetime-edit, ::-webkit-datetime-edit-year-field, ::-webkit-datetime-edit-month-field, ::-webkit-datetime-edit-day-field, ::-webkit-datetime-edit-hour-field, ::-webkit-datetime-edit-minute-field, ::-webkit-datetime-edit-second-field, ::-webkit-datetime-edit-millisecond-field, ::-webkit-datetime-edit-meridiem-field {
+padding-block: 0;
+}
+::-webkit-calendar-picker-indicator {
+line-height: 1;
+}
+:-moz-ui-invalid {
+box-shadow: none;
+}
+button, input:where([type="button"], [type="reset"], [type="submit"]), ::file-selector-button {
+appearance: button;
+}
+::-webkit-inner-spin-button, ::-webkit-outer-spin-button {
+height: auto;
+}
+[hidden]:where(:not([hidden="until-found"])) {
+display: none !important;
+}
+}
+@layer utilities {
+.pointer-events-auto {
+pointer-events: auto;
+}
+.pointer-events-none {
+pointer-events: none;
+}
+.visible {
+visibility: visible;
+}
+.absolute {
+position: absolute;
+}
+.fixed {
+position: fixed;
+}
+.relative {
+position: relative;
+}
+.sticky {
+position: sticky;
+}
+.inset-0 {
+inset: 0px;
+}
+.inset-x-0 {
+inset-inline: 0px;
+}
+.inset-x-4 {
+inset-inline: calc(var(--spacing) * 4);
+}
+.inset-y-0 {
+inset-block: 0px;
+}
+.top-0 {
+top: 0px;
+}
+.top-1\/2 {
+top: calc(1 / 2 * 100%);
+}
+.top-2 {
+top: calc(var(--spacing) * 2);
+}
+.top-4 {
+top: calc(var(--spacing) * 4);
+}
+.right-2 {
+right: calc(var(--spacing) * 2);
+}
+.right-4 {
+right: calc(var(--spacing) * 4);
+}
+.bottom-0 {
+bottom: 0px;
+}
+.bottom-20 {
+bottom: calc(var(--spacing) * 20);
+}
+.left-0 {
+left: 0px;
+}
+.left-3\.5 {
+left: calc(var(--spacing) * 3.5);
+}
+.z-0 {
+z-index: 0;
+}
+.z-10 {
+z-index: 10;
+}
+.z-20 {
+z-index: 20;
+}
+.z-30 {
+z-index: 30;
+}
+.z-50 {
+z-index: 50;
+}
+.z-\[60\] {
+z-index: 60;
+}
+.z-\[70\] {
+z-index: 70;
+}
+.z-\[100\] {
+z-index: 100;
+}
+.col-span-2 {
+grid-column: span 2 / span 2;
+}
+.col-span-full {
+grid-column: 1 / -1;
+}
+.mx-auto {
+margin-inline: auto;
+}
+.my-2 {
+margin-block: calc(var(--spacing) * 2);
+}
+.mt-0\.5 {
+margin-top: calc(var(--spacing) * 0.5);
+}
+.mt-1 {
+margin-top: var(--spacing);
+}
+.mt-2 {
+margin-top: calc(var(--spacing) * 2);
+}
+.mt-4 {
+margin-top: calc(var(--spacing) * 4);
+}
+.mt-6 {
+margin-top: calc(var(--spacing) * 6);
+}
+.mt-auto {
+margin-top: auto;
+}
+.mb-1 {
+margin-bottom: var(--spacing);
+}
+.mb-1\.5 {
+margin-bottom: calc(var(--spacing) * 1.5);
+}
+.mb-2 {
+margin-bottom: calc(var(--spacing) * 2);
+}
+.mb-3 {
+margin-bottom: calc(var(--spacing) * 3);
+}
+.mb-4 {
+margin-bottom: calc(var(--spacing) * 4);
+}
+.mb-5 {
+margin-bottom: calc(var(--spacing) * 5);
+}
+.ml-auto {
+margin-left: auto;
+}
+.line-clamp-2 {
+overflow: hidden;
+display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 2;
+}
+.block {
+display: block;
+}
+.flex {
+display: flex;
+}
+.grid {
+display: grid;
+}
+.hidden {
+display: none;
+}
+.inline-flex {
+display: inline-flex;
+}
+.table {
+display: table;
+}
+.aspect-\[4\/3\] {
+aspect-ratio: 4/3;
+}
+.h-1\.5 {
+height: calc(var(--spacing) * 1.5);
+}
+.h-4 {
+height: calc(var(--spacing) * 4);
+}
+.h-5 {
+height: calc(var(--spacing) * 5);
+}
+.h-6 {
+height: calc(var(--spacing) * 6);
+}
+.h-7 {
+height: calc(var(--spacing) * 7);
+}
+.h-7\! {
+height: calc(var(--spacing) * 7) !important;
+}
+.h-8 {
+height: calc(var(--spacing) * 8);
+}
+.h-8\! {
+height: calc(var(--spacing) * 8) !important;
+}
+.h-9 {
+height: calc(var(--spacing) * 9);
+}
+.h-10 {
+height: calc(var(--spacing) * 10);
+}
+.h-11 {
+height: calc(var(--spacing) * 11);
+}
+.h-12 {
+height: calc(var(--spacing) * 12);
+}
+.h-16 {
+height: calc(var(--spacing) * 16);
+}
+.h-20 {
+height: calc(var(--spacing) * 20);
+}
+.h-auto {
+height: auto;
+}
+.h-full {
+height: 100%;
+}
+.max-h-14 {
+max-height: calc(var(--spacing) * 14);
+}
+.max-h-24 {
+max-height: calc(var(--spacing) * 24);
+}
+.max-h-\[38vh\] {
+max-height: 38vh;
+}
+.max-h-\[92vh\] {
+max-height: 92vh;
+}
+.min-h-\[2\.5rem\] {
+min-height: 2.5rem;
+}
+.min-h-\[7rem\] {
+min-height: 7rem;
+}
+.min-h-screen {
+min-height: 100vh;
+}
+.w-4 {
+width: calc(var(--spacing) * 4);
+}
+.w-4\/5 {
+width: calc(4 / 5 * 100%);
+}
+.w-5 {
+width: calc(var(--spacing) * 5);
+}
+.w-6 {
+width: calc(var(--spacing) * 6);
+}
+.w-7 {
+width: calc(var(--spacing) * 7);
+}
+.w-7\! {
+width: calc(var(--spacing) * 7) !important;
+}
+.w-8 {
+width: calc(var(--spacing) * 8);
+}
+.w-8\! {
+width: calc(var(--spacing) * 8) !important;
+}
+.w-9 {
+width: calc(var(--spacing) * 9);
+}
+.w-10 {
+width: calc(var(--spacing) * 10);
+}
+.w-11 {
+width: calc(var(--spacing) * 11);
+}
+.w-12 {
+width: calc(var(--spacing) * 12);
+}
+.w-16 {
+width: calc(var(--spacing) * 16);
+}
+.w-20 {
+width: calc(var(--spacing) * 20);
+}
+.w-24 {
+width: calc(var(--spacing) * 24);
+}
+.w-28 {
+width: calc(var(--spacing) * 28);
+}
+.w-32 {
+width: calc(var(--spacing) * 32);
+}
+.w-64 {
+width: calc(var(--spacing) * 64);
+}
+.w-72 {
+width: calc(var(--spacing) * 72);
+}
+.w-\[58mm\] {
+width: 58mm;
+}
+.w-\[80mm\] {
+width: 80mm;
+}
+.w-\[190mm\] {
+width: 190mm;
+}
+.w-\[calc\(100\%-2rem\)\] {
+width: calc(100% - 2rem);
+}
+.w-fit {
+width: fit-content;
+}
+.w-full {
+width: 100%;
+}
+.max-w-2xl {
+max-width: var(--container-2xl);
+}
+.max-w-4xl {
+max-width: var(--container-4xl);
+}
+.max-w-\[8rem\] {
+max-width: 8rem;
+}
+.max-w-\[70\%\] {
+max-width: 70%;
+}
+.max-w-lg {
+max-width: var(--container-lg);
+}
+.max-w-sm {
+max-width: var(--container-sm);
+}
+.min-w-0 {
+min-width: 0px;
+}
+.min-w-\[4\.5rem\] {
+min-width: 4.5rem;
+}
+.flex-1 {
+flex: 1;
+}
+.shrink-0 {
+flex-shrink: 0;
+}
+.border-collapse {
+border-collapse: collapse;
+}
+.-translate-y-1\/2 {
+--tw-translate-y: calc(calc(1 / 2 * 100%) * -1);
+translate: var(--tw-translate-x) var(--tw-translate-y);
+}
+.translate-y-2 {
+--tw-translate-y: calc(var(--spacing) * 2);
+translate: var(--tw-translate-x) var(--tw-translate-y);
+}
+.scale-95 {
+--tw-scale-x: 95%;
+--tw-scale-y: 95%;
+--tw-scale-z: 95%;
+scale: var(--tw-scale-x) var(--tw-scale-y);
+}
+.animate-spin {
+animation: var(--animate-spin);
+}
+.cursor-pointer {
+cursor: pointer;
+}
+.grid-cols-2 {
+grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.grid-cols-3 {
+grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.flex-col {
+flex-direction: column;
+}
+.flex-wrap {
+flex-wrap: wrap;
+}
+.items-center {
+align-items: center;
+}
+.items-end {
+align-items: flex-end;
+}
+.items-start {
+align-items: flex-start;
+}
+.justify-between {
+justify-content: space-between;
+}
+.justify-center {
+justify-content: center;
+}
+.justify-start {
+justify-content: flex-start;
+}
+.gap-0\.5 {
+gap: calc(var(--spacing) * 0.5);
+}
+.gap-1 {
+gap: var(--spacing);
+}
+.gap-1\.5 {
+gap: calc(var(--spacing) * 1.5);
+}
+.gap-2 {
+gap: calc(var(--spacing) * 2);
+}
+.gap-3 {
+gap: calc(var(--spacing) * 3);
+}
+.gap-4 {
+gap: calc(var(--spacing) * 4);
+}
+:where(.space-y-2 > :not(:last-child)) {
+--tw-space-y-reverse: 0;
+margin-block-start: calc(calc(var(--spacing) * 2) * var(--tw-space-y-reverse));
+margin-block-end: calc(calc(var(--spacing) * 2) * calc(1 - var(--tw-space-y-reverse)));
+}
+:where(.space-y-2\.5 > :not(:last-child)) {
+--tw-space-y-reverse: 0;
+margin-block-start: calc(calc(var(--spacing) * 2.5) * var(--tw-space-y-reverse));
+margin-block-end: calc(calc(var(--spacing) * 2.5) * calc(1 - var(--tw-space-y-reverse)));
+}
+:where(.space-y-3 > :not(:last-child)) {
+--tw-space-y-reverse: 0;
+margin-block-start: calc(calc(var(--spacing) * 3) * var(--tw-space-y-reverse));
+margin-block-end: calc(calc(var(--spacing) * 3) * calc(1 - var(--tw-space-y-reverse)));
+}
+:where(.space-y-4 > :not(:last-child)) {
+--tw-space-y-reverse: 0;
+margin-block-start: calc(calc(var(--spacing) * 4) * var(--tw-space-y-reverse));
+margin-block-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-y-reverse)));
+}
+.gap-x-8 {
+column-gap: calc(var(--spacing) * 8);
+}
+.gap-y-3 {
+row-gap: calc(var(--spacing) * 3);
+}
+:where(.divide-y > :not(:last-child)) {
+--tw-divide-y-reverse: 0;
+border-bottom-style: var(--tw-border-style);
+border-top-style: var(--tw-border-style);
+border-top-width: calc(1px * var(--tw-divide-y-reverse));
+border-bottom-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
+}
+:where(.divide-neutral-200\/70 > :not(:last-child)) {
+border-color: color-mix(in srgb, oklch(92.2% 0 none) 70%, transparent);
+@supports (color: color-mix(in lab, red, red)) {
+border-color: color-mix(in oklab, var(--color-neutral-200) 70%, transparent);
+}
+}
+.truncate {
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+}
+.overflow-hidden {
+overflow: hidden;
+}
+.overflow-x-auto {
+overflow-x: auto;
+}
+.overflow-y-auto {
+overflow-y: auto;
+}
+.rounded {
+border-radius: 0.25rem;
+}
+.rounded-2xl {
+border-radius: var(--radius-2xl);
+}
+.rounded-3xl {
+border-radius: var(--radius-3xl);
+}
+.rounded-full {
+border-radius: calc(infinity * 1px);
+}
+.rounded-lg {
+border-radius: var(--radius-lg);
+}
+.rounded-xl {
+border-radius: var(--radius-xl);
+}
+.rounded-t-3xl {
+border-top-left-radius: var(--radius-3xl);
+border-top-right-radius: var(--radius-3xl);
+}
+.border {
+border-style: var(--tw-border-style);
+border-width: 1px;
+}
+.border-2 {
+border-style: var(--tw-border-style);
+border-width: 2px;
+}
+.border-4 {
+border-style: var(--tw-border-style);
+border-width: 4px;
+}
+.border-t {
+border-top-style: var(--tw-border-style);
+border-top-width: 1px;
+}
+.border-r {
+border-right-style: var(--tw-border-style);
+border-right-width: 1px;
+}
+.border-b {
+border-bottom-style: var(--tw-border-style);
+border-bottom-width: 1px;
+}
+.border-b-2 {
+border-bottom-style: var(--tw-border-style);
+border-bottom-width: 2px;
+}
+.border-dashed {
+--tw-border-style: dashed;
+border-style: dashed;
+}
+.border-amber-500\/40 {
+border-color: color-mix(in srgb, oklch(76.9% 0.188 70.08) 40%, transparent);
+@supports (color: color-mix(in lab, red, red)) {
+border-color: color-mix(in oklab, var(--color-amber-500) 40%, transparent);
+}
+}
+.border-black {
+border-color: var(--color-black);
+}
+.border-current {
+border-color: currentcolor;
+}
+.border-emerald-500\/40 {
+border-color: color-mix(in srgb, oklch(69.6% 0.17 162.48) 40%, transparent);
+@supports (color: color-mix(in lab, red, red)) {
+border-color: color-mix(in oklab, var(--color-emerald-500) 40%, transparent);
+}
+}
+.border-neutral-200 {
+border-color: var(--color-neutral-200);
+}
+.border-neutral-200\/80 {
+border-color: color-mix(in srgb, oklch(92.2% 0 none) 80%, transparent);
+@supports (color: color-mix(in lab, red, red)) {
+border-color: color-mix(in oklab, var(--color-neutral-200) 80%, transparent);
+}
+}
+.border-neutral-300 {
+border-color: var(--color-neutral-300);
+}
+.border-red-500\/40 {
+border-color: color-mix(in srgb, oklch(63.7% 0.237 25.331) 40%, transparent);
+@supports (color: color-mix(in lab, red, red)) {
+border-color: color-mix(in oklab, var(--color-red-500) 40%, transparent);
+}
+}
+.border-red-600 {
+border-color: var(--color-red-600);
+}
+.border-t-transparent {
+border-top-color: transparent;
+}
+.bg-amber-50 {
+background-color: var(--color-amber-50);
+}
+.bg-amber-500 {
+background-color: var(--color-amber-500);
+}
+.bg-amber-500\/10 {
+background-color: color-mix(in srgb, oklch(76.9% 0.188 70.08) 10%, transparent);
+@supports (color: color-mix(in lab, red, red)) {
+background-color: color-mix(in oklab, var(--color-amber-500) 10%, transparent);
+}
+}
+.bg-amber-500\/15 {
+background-color: color-mix(in srgb, oklch(76.9% 0.188 70.08) 15%, transparent);
+@supports (color: color-mix(in lab, red, red)) {
+background-color: color-mix(in oklab, var(--color-amber-500) 15%, transparent);
+}
+}
+.bg-black\/10 {
+background-color: color-mix(in srgb, #000 10%, transparent);
+@supports (color: color-mix(in lab, red, red)) {
+background-color: color-mix(in oklab, var(--color-black) 10%, transparent);
+}
+}
+.bg-black\/60 {
+background-color: color-mix(in srgb, #000 60%, transparent);
+@supports (color: color-mix(in lab, red, red)) {
+background-color: color-mix(in oklab, var(--color-black) 60%, transparent);
+}
+}
+.bg-black\/70 {
+background-color: color-mix(in srgb, #000 70%, transparent);
+@supports (color: color-mix(in lab, red, red)) {
+background-color: color-mix(in oklab, var(--color-black) 70%, transparent);
+}
+}
+.bg-emerald-50 {
+background-color: var(--color-emerald-50);
+}
+.bg-emerald-500\/10 {
+background-color: color-mix(in srgb, oklch(69.6% 0.17 162.48) 10%, transparent);
+@supports (color: color-mix(in lab, red, red)) {
+background-color: color-mix(in oklab, var(--color-emerald-500) 10%, transparent);
+}
+}
+.bg-neutral-100 {
+background-color: var(--color-neutral-100);
+}
+.bg-neutral-100\/80 {
+background-color: color-mix(in srgb, oklch(97% 0 none) 80%, transparent);
+@supports (color: color-mix(in lab, red, red)) {
+background-color: color-mix(in oklab, var(--color-neutral-100) 80%, transparent);
+}
+}
+.bg-neutral-200 {
+background-color: var(--color-neutral-200);
+}
+.bg-neutral-200\/70 {
+background-color: color-mix(in srgb, oklch(92.2% 0 none) 70%, transparent);
+@supports (color: color-mix(in lab, red, red)) {
+background-color: color-mix(in oklab, var(--color-neutral-200) 70%, transparent);
+}
+}
+.bg-neutral-200\/80 {
+background-color: color-mix(in srgb, oklch(92.2% 0 none) 80%, transparent);
+@supports (color: color-mix(in lab, red, red)) {
+background-color: color-mix(in oklab, var(--color-neutral-200) 80%, transparent);
+}
+}
+.bg-neutral-500\/10 {
+background-color: color-mix(in srgb, oklch(55.6% 0 none) 10%, transparent);
+@supports (color: color-mix(in lab, red, red)) {
+background-color: color-mix(in oklab, var(--color-neutral-500) 10%, transparent);
+}
+}
+.bg-neutral-950 {
+background-color: var(--color-neutral-950);
+}
+.bg-red-50 {
+background-color: var(--color-red-50);
+}
+.bg-red-600 {
+background-color: var(--color-red-600);
+}
+.bg-red-600\/10 {
+background-color: color-mix(in srgb, oklch(57.7% 0.245 27.325) 10%, transparent);
+@supports (color: color-mix(in lab, red, red)) {
+background-color: color-mix(in oklab, var(--color-red-600) 10%, transparent);
+}
+}
+.bg-red-600\/15 {
+background-color: color-mix(in srgb, oklch(57.7% 0.245 27.325) 15%, transparent);
+@supports (color: color-mix(in lab, red, red)) {
+background-color: color-mix(in oklab, var(--color-red-600) 15%, transparent);
+}
+}
+.bg-white {
+background-color: var(--color-white);
+}
+.bg-white\/70 {
+background-color: color-mix(in srgb, #fff 70%, transparent);
+@supports (color: color-mix(in lab, red, red)) {
+background-color: color-mix(in oklab, var(--color-white) 70%, transparent);
+}
+}
+.bg-white\/80 {
+background-color: color-mix(in srgb, #fff 80%, transparent);
+@supports (color: color-mix(in lab, red, red)) {
+background-color: color-mix(in oklab, var(--color-white) 80%, transparent);
+}
+}
+.bg-white\/90 {
+background-color: color-mix(in srgb, #fff 90%, transparent);
+@supports (color: color-mix(in lab, red, red)) {
+background-color: color-mix(in oklab, var(--color-white) 90%, transparent);
+}
+}
+.bg-white\/95 {
+background-color: color-mix(in srgb, #fff 95%, transparent);
+@supports (color: color-mix(in lab, red, red)) {
+background-color: color-mix(in oklab, var(--color-white) 95%, transparent);
+}
+}
+.bg-linear-to-br {
+--tw-gradient-position: to bottom right;
+@supports (background-image: linear-gradient(in lab, red, red)) {
+--tw-gradient-position: to bottom right in oklab;
+}
+background-image: linear-gradient(var(--tw-gradient-stops));
+}
+.bg-\[image\:radial-gradient\(60rem_40rem_at_top_right\,rgba\(220\,38\,38\,0\.16\)\,transparent\)\,radial-gradient\(40rem_30rem_at_bottom_left\,rgba\(220\,38\,38\,0\.08\)\,transparent\)\] {
+background-image: radial-gradient(60rem 40rem at top right,rgba(220,38,38,0.16),transparent),radial-gradient(40rem 30rem at bottom left,rgba(220,38,38,0.08),transparent);
+}
+.from-red-600 {
+--tw-gradient-from: var(--color-red-600);
+--tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+}
+.to-red-900 {
+--tw-gradient-to: var(--color-red-900);
+--tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+}
+.to-red-950 {
+--tw-gradient-to: var(--color-red-950);
+--tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+}
+.fill-black {
+fill: var(--color-black);
+}
+.fill-neutral-200 {
+fill: var(--color-neutral-200);
+}
+.fill-neutral-500 {
+fill: var(--color-neutral-500);
+}
+.fill-red-500 {
+fill: var(--color-red-500);
+}
+.stroke-neutral-300 {
+stroke: var(--color-neutral-300);
+}
+.object-contain {
+object-fit: contain;
+}
+.object-cover {
+object-fit: cover;
+}
+.p-0\.5 {
+padding: calc(var(--spacing) * 0.5);
+}
+.p-1 {
+padding: var(--spacing);
+}
+.p-2 {
+padding: calc(var(--spacing) * 2);
+}
+.p-2\! {
+padding: calc(var(--spacing) * 2) !important;
+}
+.p-2\.5 {
+padding: calc(var(--spacing) * 2.5);
+}
+.p-3 {
+padding: calc(var(--spacing) * 3);
+}
+.p-3\! {
+padding: calc(var(--spacing) * 3) !important;
+}
+.p-4 {
+padding: calc(var(--spacing) * 4);
+}
+.p-5 {
+padding: calc(var(--spacing) * 5);
+}
+.p-6 {
+padding: calc(var(--spacing) * 6);
+}
+.p-10 {
+padding: calc(var(--spacing) * 10);
+}
+.px-1\.5 {
+padding-inline: calc(var(--spacing) * 1.5);
+}
+.px-2 {
+padding-inline: calc(var(--spacing) * 2);
+}
+.px-2\.5 {
+padding-inline: calc(var(--spacing) * 2.5);
+}
+.px-3 {
+padding-inline: calc(var(--spacing) * 3);
+}
+.px-3\! {
+padding-inline: calc(var(--spacing) * 3) !important;
+}
+.px-3\.5 {
+padding-inline: calc(var(--spacing) * 3.5);
+}
+.px-4 {
+padding-inline: calc(var(--spacing) * 4);
+}
+.px-5 {
+padding-inline: calc(var(--spacing) * 5);
+}
+.px-6 {
+padding-inline: calc(var(--spacing) * 6);
+}
+.py-0\.5 {
+padding-block: calc(var(--spacing) * 0.5);
+}
+.py-1 {
+padding-block: var(--spacing);
+}
+.py-1\.5 {
+padding-block: calc(var(--spacing) * 1.5);
+}
+.py-2 {
+padding-block: calc(var(--spacing) * 2);
+}
+.py-2\! {
+padding-block: calc(var(--spacing) * 2) !important;
+}
+.py-2\.5 {
+padding-block: calc(var(--spacing) * 2.5);
+}
+.py-3 {
+padding-block: calc(var(--spacing) * 3);
+}
+.py-3\.5 {
+padding-block: calc(var(--spacing) * 3.5);
+}
+.py-4 {
+padding-block: calc(var(--spacing) * 4);
+}
+.py-10 {
+padding-block: calc(var(--spacing) * 10);
+}
+.pt-2 {
+padding-top: calc(var(--spacing) * 2);
+}
+.pt-4 {
+padding-top: calc(var(--spacing) * 4);
+}
+.pr-1 {
+padding-right: var(--spacing);
+}
+.pb-1 {
+padding-bottom: var(--spacing);
+}
+.pb-40 {
+padding-bottom: calc(var(--spacing) * 40);
+}
+.pl-11 {
+padding-left: calc(var(--spacing) * 11);
+}
+.text-center {
+text-align: center;
+}
+.text-left {
+text-align: left;
+}
+.text-right {
+text-align: right;
+}
+.font-mono {
+font-family: var(--font-mono);
+}
+.text-2xl {
+font-size: var(--text-2xl);
+line-height: var(--tw-leading, var(--text-2xl--line-height));
+}
+.text-3xl {
+font-size: var(--text-3xl);
+line-height: var(--tw-leading, var(--text-3xl--line-height));
+}
+.text-base {
+font-size: var(--text-base);
+line-height: var(--tw-leading, var(--text-base--line-height));
+}
+.text-lg {
+font-size: var(--text-lg);
+line-height: var(--tw-leading, var(--text-lg--line-height));
+}
+.text-sm {
+font-size: var(--text-sm);
+line-height: var(--tw-leading, var(--text-sm--line-height));
+}
+.text-xl {
+font-size: var(--text-xl);
+line-height: var(--tw-leading, var(--text-xl--line-height));
+}
+.text-xs {
+font-size: var(--text-xs);
+line-height: var(--tw-leading, var(--text-xs--line-height));
+}
+.text-\[10px\] {
+font-size: 10px;
+}
+.text-\[11px\] {
+font-size: 11px;
+}
+.leading-relaxed {
+--tw-leading: var(--leading-relaxed);
+line-height: var(--leading-relaxed);
+}
+.leading-snug {
+--tw-leading: var(--leading-snug);
+line-height: var(--leading-snug);
+}
+.leading-tight {
+--tw-leading: var(--leading-tight);
+line-height: var(--leading-tight);
+}
+.font-bold {
+--tw-font-weight: var(--font-weight-bold);
+font-weight: var(--font-weight-bold);
+}
+.font-extrabold {
+--tw-font-weight: var(--font-weight-extrabold);
+font-weight: var(--font-weight-extrabold);
+}
+.font-medium {
+--tw-font-weight: var(--font-weight-medium);
+font-weight: var(--font-weight-medium);
+}
+.font-semibold {
+--tw-font-weight: var(--font-weight-semibold);
+font-weight: var(--font-weight-semibold);
+}
+.tracking-\[0\.3em\] {
+--tw-tracking: 0.3em;
+letter-spacing: 0.3em;
+}
+.tracking-tight {
+--tw-tracking: var(--tracking-tight);
+letter-spacing: var(--tracking-tight);
+}
+.tracking-wide {
+--tw-tracking: var(--tracking-wide);
+letter-spacing: var(--tracking-wide);
+}
+.tracking-widest {
+--tw-tracking: var(--tracking-widest);
+letter-spacing: var(--tracking-widest);
+}
+.break-words {
+overflow-wrap: break-word;
+}
+.text-amber-600 {
+color: var(--color-amber-600);
+}
+.text-amber-800 {
+color: var(--color-amber-800);
+}
+.text-black {
+color: var(--color-black);
+}
+.text-emerald-600 {
+color: var(--color-emerald-600);
+}
+.text-emerald-800 {
+color: var(--color-emerald-800);
+}
+.text-neutral-400 {
+color: var(--color-neutral-400);
+}
+.text-neutral-500 {
+color: var(--color-neutral-500);
+}
+.text-neutral-600 {
+color: var(--color-neutral-600);
+}
+.text-neutral-700 {
+color: var(--color-neutral-700);
+}
+.text-neutral-800 {
+color: var(--color-neutral-800);
+}
+.text-neutral-900 {
+color: var(--color-neutral-900);
+}
+.text-red-500 {
+color: var(--color-red-500);
+}
+.text-red-600 {
+color: var(--color-red-600);
+}
+.text-red-800 {
+color: var(--color-red-800);
+}
+.text-white {
+color: var(--color-white);
+}
+.text-white\/90 {
+color: color-mix(in srgb, #fff 90%, transparent);
+@supports (color: color-mix(in lab, red, red)) {
+color: color-mix(in oklab, var(--color-white) 90%, transparent);
+}
+}
+.normal-case {
+text-transform: none;
+}
+.uppercase {
+text-transform: uppercase;
+}
+.antialiased {
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+.accent-red-600 {
+accent-color: var(--color-red-600);
+}
+.opacity-0 {
+opacity: 0%;
+}
+.opacity-60 {
+opacity: 60%;
+}
+.opacity-70 {
+opacity: 70%;
+}
+.opacity-90 {
+opacity: 90%;
+}
+.shadow {
+--tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+}
+.shadow-2xl {
+--tw-shadow: 0 25px 50px -12px var(--tw-shadow-color, rgb(0 0 0 / 0.25));
+box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+}
+.shadow-lg {
+--tw-shadow: 0 10px 15px -3px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 4px 6px -4px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+}
+.shadow-sm {
+--tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+}
+.shadow-xl {
+--tw-shadow: 0 20px 25px -5px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 8px 10px -6px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+}
+.shadow-red-600\/25 {
+--tw-shadow-color: color-mix(in srgb, oklch(57.7% 0.245 27.325) 25%, transparent);
+@supports (color: color-mix(in lab, red, red)) {
+--tw-shadow-color: color-mix(in oklab, color-mix(in oklab, var(--color-red-600) 25%, transparent) var(--tw-shadow-alpha), transparent);
+}
+}
+.shadow-red-600\/30 {
+--tw-shadow-color: color-mix(in srgb, oklch(57.7% 0.245 27.325) 30%, transparent);
+@supports (color: color-mix(in lab, red, red)) {
+--tw-shadow-color: color-mix(in oklab, color-mix(in oklab, var(--color-red-600) 30%, transparent) var(--tw-shadow-alpha), transparent);
+}
+}
+.shadow-red-600\/40 {
+--tw-shadow-color: color-mix(in srgb, oklch(57.7% 0.245 27.325) 40%, transparent);
+@supports (color: color-mix(in lab, red, red)) {
+--tw-shadow-color: color-mix(in oklab, color-mix(in oklab, var(--color-red-600) 40%, transparent) var(--tw-shadow-alpha), transparent);
+}
+}
+.backdrop-blur {
+--tw-backdrop-blur: blur(8px);
+-webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
+backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
+}
+.backdrop-blur-sm {
+--tw-backdrop-blur: blur(var(--blur-sm));
+-webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
+backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
+}
+.backdrop-blur-xl {
+--tw-backdrop-blur: blur(var(--blur-xl));
+-webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
+backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
+}
+.transition {
+transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
+transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+transition-duration: var(--tw-duration, var(--default-transition-duration));
+}
+.transition-all {
+transition-property: all;
+transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+transition-duration: var(--tw-duration, var(--default-transition-duration));
+}
+.transition-opacity {
+transition-property: opacity;
+transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+transition-duration: var(--tw-duration, var(--default-transition-duration));
+}
+.duration-150 {
+--tw-duration: 150ms;
+transition-duration: 150ms;
+}
+.duration-200 {
+--tw-duration: 200ms;
+transition-duration: 200ms;
+}
+.duration-300 {
+--tw-duration: 300ms;
+transition-duration: 300ms;
+}
+.duration-500 {
+--tw-duration: 500ms;
+transition-duration: 500ms;
+}
+@media (hover: hover) {
+.group-hover\:scale-105:is(:where(.group):hover *) {
+--tw-scale-x: 105%;
+--tw-scale-y: 105%;
+--tw-scale-z: 105%;
+scale: var(--tw-scale-x) var(--tw-scale-y);
+}
+}
+.peer-checked\:border-red-600:is(:where(.peer):checked ~ *) {
+border-color: var(--color-red-600);
+}
+.peer-checked\:bg-red-600:is(:where(.peer):checked ~ *) {
+background-color: var(--color-red-600);
+}
+.peer-checked\:text-white:is(:where(.peer):checked ~ *) {
+color: var(--color-white);
+}
+.placeholder\:text-neutral-400::placeholder {
+color: var(--color-neutral-400);
+}
+@media (hover: hover) {
+.hover\:border-red-500\/50:hover {
+border-color: color-mix(in srgb, oklch(63.7% 0.237 25.331) 50%, transparent);
+}
+@supports (color: color-mix(in lab, red, red)) {
+.hover\:border-red-500\/50:hover {
+border-color: color-mix(in oklab, var(--color-red-500) 50%, transparent);
+}
+}
+.hover\:border-red-500\/60:hover {
+border-color: color-mix(in srgb, oklch(63.7% 0.237 25.331) 60%, transparent);
+}
+@supports (color: color-mix(in lab, red, red)) {
+.hover\:border-red-500\/60:hover {
+border-color: color-mix(in oklab, var(--color-red-500) 60%, transparent);
+}
+}
+.hover\:bg-black\/20:hover {
+background-color: color-mix(in srgb, #000 20%, transparent);
+}
+@supports (color: color-mix(in lab, red, red)) {
+.hover\:bg-black\/20:hover {
+background-color: color-mix(in oklab, var(--color-black) 20%, transparent);
+}
+}
+.hover\:bg-neutral-100\/70:hover {
+background-color: color-mix(in srgb, oklch(97% 0 none) 70%, transparent);
+}
+@supports (color: color-mix(in lab, red, red)) {
+.hover\:bg-neutral-100\/70:hover {
+background-color: color-mix(in oklab, var(--color-neutral-100) 70%, transparent);
+}
+}
+.hover\:bg-neutral-200:hover {
+background-color: var(--color-neutral-200);
+}
+.hover\:bg-neutral-200\/70:hover {
+background-color: color-mix(in srgb, oklch(92.2% 0 none) 70%, transparent);
+}
+@supports (color: color-mix(in lab, red, red)) {
+.hover\:bg-neutral-200\/70:hover {
+background-color: color-mix(in oklab, var(--color-neutral-200) 70%, transparent);
+}
+}
+.hover\:bg-neutral-300:hover {
+background-color: var(--color-neutral-300);
+}
+.hover\:bg-red-500:hover {
+background-color: var(--color-red-500);
+}
+.hover\:bg-red-600:hover {
+background-color: var(--color-red-600);
+}
+.hover\:bg-white\/60:hover {
+background-color: color-mix(in srgb, #fff 60%, transparent);
+}
+@supports (color: color-mix(in lab, red, red)) {
+.hover\:bg-white\/60:hover {
+background-color: color-mix(in oklab, var(--color-white) 60%, transparent);
+}
+}
+.hover\:fill-red-400:hover {
+fill: var(--color-red-400);
+}
+.hover\:text-neutral-900:hover {
+color: var(--color-neutral-900);
+}
+.hover\:text-red-500\!:hover {
+color: var(--color-red-500) !important;
+}
+.hover\:text-white:hover {
+color: var(--color-white);
+}
+.hover\:underline:hover {
+text-decoration-line: underline;
+}
+.hover\:opacity-80:hover {
+opacity: 80%;
+}
+.hover\:shadow-lg:hover {
+--tw-shadow: 0 10px 15px -3px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 4px 6px -4px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+}
+.hover\:shadow-red-600\/10:hover {
+--tw-shadow-color: color-mix(in srgb, oklch(57.7% 0.245 27.325) 10%, transparent);
+}
+@supports (color: color-mix(in lab, red, red)) {
+.hover\:shadow-red-600\/10:hover {
+--tw-shadow-color: color-mix(in oklab, color-mix(in oklab, var(--color-red-600) 10%, transparent) var(--tw-shadow-alpha), transparent);
+}
+}
+}
+.focus\:border-red-500:focus {
+border-color: var(--color-red-500);
+}
+.focus\:ring-2:focus {
+--tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
+box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+}
+.focus\:ring-red-500\/30:focus {
+--tw-ring-color: color-mix(in srgb, oklch(63.7% 0.237 25.331) 30%, transparent);
+@supports (color: color-mix(in lab, red, red)) {
+--tw-ring-color: color-mix(in oklab, var(--color-red-500) 30%, transparent);
+}
+}
+.focus\:outline-none:focus {
+--tw-outline-style: none;
+outline-style: none;
+}
+.focus-visible\:ring-2:focus-visible {
+--tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
+box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+}
+.focus-visible\:ring-red-500:focus-visible {
+--tw-ring-color: var(--color-red-500);
+}
+.active\:scale-90:active {
+--tw-scale-x: 90%;
+--tw-scale-y: 90%;
+--tw-scale-z: 90%;
+scale: var(--tw-scale-x) var(--tw-scale-y);
+}
+.active\:scale-95:active {
+--tw-scale-x: 95%;
+--tw-scale-y: 95%;
+--tw-scale-z: 95%;
+scale: var(--tw-scale-x) var(--tw-scale-y);
+}
+.disabled\:pointer-events-none:disabled {
+pointer-events: none;
+}
+.disabled\:opacity-40:disabled {
+opacity: 40%;
+}
+.disabled\:opacity-50:disabled {
+opacity: 50%;
+}
+@media (width >= 40rem) {
+.sm\:col-span-2 {
+grid-column: span 2 / span 2;
+}
+.sm\:block {
+display: block;
+}
+.sm\:hidden {
+display: none;
+}
+.sm\:inline {
+display: inline;
+}
+.sm\:inline-flex {
+display: inline-flex;
+}
+.sm\:grid-cols-2 {
+grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.sm\:grid-cols-3 {
+grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.sm\:grid-cols-\[1fr_12rem_auto\] {
+grid-template-columns: 1fr 12rem auto;
+}
+.sm\:grid-cols-\[1fr_14rem_auto\] {
+grid-template-columns: 1fr 14rem auto;
+}
+.sm\:items-center {
+align-items: center;
+}
+.sm\:gap-4 {
+gap: calc(var(--spacing) * 4);
+}
+.sm\:rounded-3xl {
+border-radius: var(--radius-3xl);
+}
+.sm\:p-3\! {
+padding: calc(var(--spacing) * 3) !important;
+}
+.sm\:p-4 {
+padding: calc(var(--spacing) * 4);
+}
+.sm\:p-4\! {
+padding: calc(var(--spacing) * 4) !important;
+}
+.sm\:p-5 {
+padding: calc(var(--spacing) * 5);
+}
+.sm\:text-2xl {
+font-size: var(--text-2xl);
+line-height: var(--tw-leading, var(--text-2xl--line-height));
+}
+}
+@media (width >= 48rem) {
+.md\:block {
+display: block;
+}
+.md\:hidden {
+display: none;
+}
+.md\:grid-cols-2 {
+grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+}
+@media (width >= 64rem) {
+.lg\:sticky {
+position: sticky;
+}
+.lg\:top-24 {
+top: calc(var(--spacing) * 24);
+}
+.lg\:bottom-4 {
+bottom: calc(var(--spacing) * 4);
+}
+.lg\:col-span-2 {
+grid-column: span 2 / span 2;
+}
+.lg\:col-span-5 {
+grid-column: span 5 / span 5;
+}
+.lg\:col-span-7 {
+grid-column: span 7 / span 7;
+}
+.lg\:flex {
+display: flex;
+}
+.lg\:hidden {
+display: none;
+}
+.lg\:hidden\! {
+display: none !important;
+}
+.lg\:grid-cols-2 {
+grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.lg\:grid-cols-3 {
+grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.lg\:grid-cols-12 {
+grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+.lg\:p-6 {
+padding: calc(var(--spacing) * 6);
+}
+.lg\:px-6 {
+padding-inline: calc(var(--spacing) * 6);
+}
+.lg\:pb-10 {
+padding-bottom: calc(var(--spacing) * 10);
+}
+.lg\:pl-64 {
+padding-left: calc(var(--spacing) * 64);
+}
+}
+@media (width >= 80rem) {
+.xl\:sticky {
+position: sticky;
+}
+.xl\:top-24 {
+top: calc(var(--spacing) * 24);
+}
+.xl\:col-span-4 {
+grid-column: span 4 / span 4;
+}
+.xl\:col-span-8 {
+grid-column: span 8 / span 8;
+}
+.xl\:inline {
+display: inline;
+}
+.xl\:grid-cols-4 {
+grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.xl\:grid-cols-\[1fr_24rem\] {
+grid-template-columns: 1fr 24rem;
+}
+}
+:where(.dark\:divide-white\/5:where(.dark, .dark *) > :not(:last-child)) {
+border-color: color-mix(in srgb, #fff 5%, transparent);
+@supports (color: color-mix(in lab, red, red)) {
+border-color: color-mix(in oklab, var(--color-white) 5%, transparent);
+}
+}
+.dark\:border-white\/10:where(.dark, .dark *) {
+border-color: color-mix(in srgb, #fff 10%, transparent);
+@supports (color: color-mix(in lab, red, red)) {
+border-color: color-mix(in oklab, var(--color-white) 10%, transparent);
+}
+}
+.dark\:border-white\/15:where(.dark, .dark *) {
+border-color: color-mix(in srgb, #fff 15%, transparent);
+@supports (color: color-mix(in lab, red, red)) {
+border-color: color-mix(in oklab, var(--color-white) 15%, transparent);
+}
+}
+.dark\:bg-amber-950\/80:where(.dark, .dark *) {
+background-color: color-mix(in srgb, oklch(27.9% 0.077 45.635) 80%, transparent);
+@supports (color: color-mix(in lab, red, red)) {
+background-color: color-mix(in oklab, var(--color-amber-950) 80%, transparent);
+}
+}
+.dark\:bg-black\/40:where(.dark, .dark *) {
+background-color: color-mix(in srgb, #000 40%, transparent);
+@supports (color: color-mix(in lab, red, red)) {
+background-color: color-mix(in oklab, var(--color-black) 40%, transparent);
+}
+}
+.dark\:bg-emerald-950\/80:where(.dark, .dark *) {
+background-color: color-mix(in srgb, oklch(26.2% 0.051 172.552) 80%, transparent);
+@supports (color: color-mix(in lab, red, red)) {
+background-color: color-mix(in oklab, var(--color-emerald-950) 80%, transparent);
+}
+}
+.dark\:bg-neutral-800:where(.dark, .dark *) {
+background-color: var(--color-neutral-800);
+}
+.dark\:bg-neutral-900:where(.dark, .dark *) {
+background-color: var(--color-neutral-900);
+}
+.dark\:bg-neutral-900\/60:where(.dark, .dark *) {
+background-color: color-mix(in srgb, oklch(20.5% 0 none) 60%, transparent);
+@supports (color: color-mix(in lab, red, red)) {
+background-color: color-mix(in oklab, var(--color-neutral-900) 60%, transparent);
+}
+}
+.dark\:bg-neutral-900\/95:where(.dark, .dark *) {
+background-color: color-mix(in srgb, oklch(20.5% 0 none) 95%, transparent);
+@supports (color: color-mix(in lab, red, red)) {
+background-color: color-mix(in oklab, var(--color-neutral-900) 95%, transparent);
+}
+}
+.dark\:bg-neutral-950:where(.dark, .dark *) {
+background-color: var(--color-neutral-950);
+}
+.dark\:bg-neutral-950\/90:where(.dark, .dark *) {
+background-color: color-mix(in srgb, oklch(14.5% 0 none) 90%, transparent);
+@supports (color: color-mix(in lab, red, red)) {
+background-color: color-mix(in oklab, var(--color-neutral-950) 90%, transparent);
+}
+}
+.dark\:bg-red-950\/80:where(.dark, .dark *) {
+background-color: color-mix(in srgb, oklch(25.8% 0.092 26.042) 80%, transparent);
+@supports (color: color-mix(in lab, red, red)) {
+background-color: color-mix(in oklab, var(--color-red-950) 80%, transparent);
+}
+}
+.dark\:bg-white\/5:where(.dark, .dark *) {
+background-color: color-mix(in srgb, #fff 5%, transparent);
+@supports (color: color-mix(in lab, red, red)) {
+background-color: color-mix(in oklab, var(--color-white) 5%, transparent);
+}
+}
+.dark\:bg-white\/10:where(.dark, .dark *) {
+background-color: color-mix(in srgb, #fff 10%, transparent);
+@supports (color: color-mix(in lab, red, red)) {
+background-color: color-mix(in oklab, var(--color-white) 10%, transparent);
+}
+}
+.dark\:fill-white\/10:where(.dark, .dark *) {
+fill: color-mix(in srgb, #fff 10%, transparent);
+@supports (color: color-mix(in lab, red, red)) {
+fill: color-mix(in oklab, var(--color-white) 10%, transparent);
+}
+}
+.dark\:stroke-white\/10:where(.dark, .dark *) {
+stroke: color-mix(in srgb, #fff 10%, transparent);
+@supports (color: color-mix(in lab, red, red)) {
+stroke: color-mix(in oklab, var(--color-white) 10%, transparent);
+}
+}
+.dark\:text-amber-200:where(.dark, .dark *) {
+color: var(--color-amber-200);
+}
+.dark\:text-amber-400:where(.dark, .dark *) {
+color: var(--color-amber-400);
+}
+.dark\:text-emerald-200:where(.dark, .dark *) {
+color: var(--color-emerald-200);
+}
+.dark\:text-emerald-400:where(.dark, .dark *) {
+color: var(--color-emerald-400);
+}
+.dark\:text-neutral-100:where(.dark, .dark *) {
+color: var(--color-neutral-100);
+}
+.dark\:text-neutral-300:where(.dark, .dark *) {
+color: var(--color-neutral-300);
+}
+.dark\:text-neutral-400:where(.dark, .dark *) {
+color: var(--color-neutral-400);
+}
+.dark\:text-red-200:where(.dark, .dark *) {
+color: var(--color-red-200);
+}
+.dark\:text-red-400:where(.dark, .dark *) {
+color: var(--color-red-400);
+}
+.dark\:text-white:where(.dark, .dark *) {
+color: var(--color-white);
+}
+.dark\:\[color-scheme\:dark\]:where(.dark, .dark *) {
+color-scheme: dark;
+}
+.dark\:placeholder\:text-neutral-500:where(.dark, .dark *)::placeholder {
+color: var(--color-neutral-500);
+}
+@media (hover: hover) {
+.dark\:hover\:bg-white\/5:where(.dark, .dark *):hover {
+background-color: color-mix(in srgb, #fff 5%, transparent);
+}
+@supports (color: color-mix(in lab, red, red)) {
+.dark\:hover\:bg-white\/5:where(.dark, .dark *):hover {
+background-color: color-mix(in oklab, var(--color-white) 5%, transparent);
+}
+}
+.dark\:hover\:bg-white\/10:where(.dark, .dark *):hover {
+background-color: color-mix(in srgb, #fff 10%, transparent);
+}
+@supports (color: color-mix(in lab, red, red)) {
+.dark\:hover\:bg-white\/10:where(.dark, .dark *):hover {
+background-color: color-mix(in oklab, var(--color-white) 10%, transparent);
+}
+}
+.dark\:hover\:bg-white\/20:where(.dark, .dark *):hover {
+background-color: color-mix(in srgb, #fff 20%, transparent);
+}
+@supports (color: color-mix(in lab, red, red)) {
+.dark\:hover\:bg-white\/20:where(.dark, .dark *):hover {
+background-color: color-mix(in oklab, var(--color-white) 20%, transparent);
+}
+}
+.dark\:hover\:text-white:where(.dark, .dark *):hover {
+color: var(--color-white);
+}
+}
+@media print {
+.print\:block {
+display: block;
+}
+.print\:hidden {
+display: none;
+}
+.print\:bg-white {
+background-color: var(--color-white);
+}
+.print\:text-black {
+color: var(--color-black);
+}
+}
+}
+@property --tw-translate-x {
+syntax: "*";
+inherits: false;
+initial-value: 0;
+}
+@property --tw-translate-y {
+syntax: "*";
+inherits: false;
+initial-value: 0;
+}
+@property --tw-translate-z {
+syntax: "*";
+inherits: false;
+initial-value: 0;
+}
+@property --tw-scale-x {
+syntax: "*";
+inherits: false;
+initial-value: 1;
+}
+@property --tw-scale-y {
+syntax: "*";
+inherits: false;
+initial-value: 1;
+}
+@property --tw-scale-z {
+syntax: "*";
+inherits: false;
+initial-value: 1;
+}
+@property --tw-space-y-reverse {
+syntax: "*";
+inherits: false;
+initial-value: 0;
+}
+@property --tw-divide-y-reverse {
+syntax: "*";
+inherits: false;
+initial-value: 0;
+}
+@property --tw-border-style {
+syntax: "*";
+inherits: false;
+initial-value: solid;
+}
+@property --tw-gradient-position {
+syntax: "*";
+inherits: false;
+}
+@property --tw-gradient-from {
+syntax: "<color>";
+inherits: false;
+initial-value: #0000;
+}
+@property --tw-gradient-via {
+syntax: "<color>";
+inherits: false;
+initial-value: #0000;
+}
+@property --tw-gradient-to {
+syntax: "<color>";
+inherits: false;
+initial-value: #0000;
+}
+@property --tw-gradient-stops {
+syntax: "*";
+inherits: false;
+}
+@property --tw-gradient-via-stops {
+syntax: "*";
+inherits: false;
+}
+@property --tw-gradient-from-position {
+syntax: "<length-percentage>";
+inherits: false;
+initial-value: 0%;
+}
+@property --tw-gradient-via-position {
+syntax: "<length-percentage>";
+inherits: false;
+initial-value: 50%;
+}
+@property --tw-gradient-to-position {
+syntax: "<length-percentage>";
+inherits: false;
+initial-value: 100%;
+}
+@property --tw-leading {
+syntax: "*";
+inherits: false;
+}
+@property --tw-font-weight {
+syntax: "*";
+inherits: false;
+}
+@property --tw-tracking {
+syntax: "*";
+inherits: false;
+}
+@property --tw-shadow {
+syntax: "*";
+inherits: false;
+initial-value: 0 0 #0000;
+}
+@property --tw-shadow-color {
+syntax: "*";
+inherits: false;
+}
+@property --tw-shadow-alpha {
+syntax: "<percentage>";
+inherits: false;
+initial-value: 100%;
+}
+@property --tw-inset-shadow {
+syntax: "*";
+inherits: false;
+initial-value: 0 0 #0000;
+}
+@property --tw-inset-shadow-color {
+syntax: "*";
+inherits: false;
+}
+@property --tw-inset-shadow-alpha {
+syntax: "<percentage>";
+inherits: false;
+initial-value: 100%;
+}
+@property --tw-ring-color {
+syntax: "*";
+inherits: false;
+}
+@property --tw-ring-shadow {
+syntax: "*";
+inherits: false;
+initial-value: 0 0 #0000;
+}
+@property --tw-inset-ring-color {
+syntax: "*";
+inherits: false;
+}
+@property --tw-inset-ring-shadow {
+syntax: "*";
+inherits: false;
+initial-value: 0 0 #0000;
+}
+@property --tw-ring-inset {
+syntax: "*";
+inherits: false;
+}
+@property --tw-ring-offset-width {
+syntax: "<length>";
+inherits: false;
+initial-value: 0px;
+}
+@property --tw-ring-offset-color {
+syntax: "*";
+inherits: false;
+initial-value: #fff;
+}
+@property --tw-ring-offset-shadow {
+syntax: "*";
+inherits: false;
+initial-value: 0 0 #0000;
+}
+@property --tw-backdrop-blur {
+syntax: "*";
+inherits: false;
+}
+@property --tw-backdrop-brightness {
+syntax: "*";
+inherits: false;
+}
+@property --tw-backdrop-contrast {
+syntax: "*";
+inherits: false;
+}
+@property --tw-backdrop-grayscale {
+syntax: "*";
+inherits: false;
+}
+@property --tw-backdrop-hue-rotate {
+syntax: "*";
+inherits: false;
+}
+@property --tw-backdrop-invert {
+syntax: "*";
+inherits: false;
+}
+@property --tw-backdrop-opacity {
+syntax: "*";
+inherits: false;
+}
+@property --tw-backdrop-saturate {
+syntax: "*";
+inherits: false;
+}
+@property --tw-backdrop-sepia {
+syntax: "*";
+inherits: false;
+}
+@property --tw-duration {
+syntax: "*";
+inherits: false;
+}
+@keyframes spin {
+to {
+transform: rotate(360deg);
+}
+}
+@layer properties {
+@supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
+*, ::before, ::after, ::backdrop {
+--tw-translate-x: 0;
+--tw-translate-y: 0;
+--tw-translate-z: 0;
+--tw-scale-x: 1;
+--tw-scale-y: 1;
+--tw-scale-z: 1;
+--tw-space-y-reverse: 0;
+--tw-divide-y-reverse: 0;
+--tw-border-style: solid;
+--tw-gradient-position: initial;
+--tw-gradient-from: #0000;
+--tw-gradient-via: #0000;
+--tw-gradient-to: #0000;
+--tw-gradient-stops: initial;
+--tw-gradient-via-stops: initial;
+--tw-gradient-from-position: 0%;
+--tw-gradient-via-position: 50%;
+--tw-gradient-to-position: 100%;
+--tw-leading: initial;
+--tw-font-weight: initial;
+--tw-tracking: initial;
+--tw-shadow: 0 0 #0000;
+--tw-shadow-color: initial;
+--tw-shadow-alpha: 100%;
+--tw-inset-shadow: 0 0 #0000;
+--tw-inset-shadow-color: initial;
+--tw-inset-shadow-alpha: 100%;
+--tw-ring-color: initial;
+--tw-ring-shadow: 0 0 #0000;
+--tw-inset-ring-color: initial;
+--tw-inset-ring-shadow: 0 0 #0000;
+--tw-ring-inset: initial;
+--tw-ring-offset-width: 0px;
+--tw-ring-offset-color: #fff;
+--tw-ring-offset-shadow: 0 0 #0000;
+--tw-backdrop-blur: initial;
+--tw-backdrop-brightness: initial;
+--tw-backdrop-contrast: initial;
+--tw-backdrop-grayscale: initial;
+--tw-backdrop-hue-rotate: initial;
+--tw-backdrop-invert: initial;
+--tw-backdrop-opacity: initial;
+--tw-backdrop-saturate: initial;
+--tw-backdrop-sepia: initial;
+--tw-duration: initial;
+}
+}
+}
+</style>
+</head>
+<body class="min-h-screen bg-neutral-100 text-neutral-900 antialiased dark:bg-neutral-950 dark:text-neutral-100 dark:[color-scheme:dark] print:bg-white print:text-black">
+
+<!-- Boot / loading screen -->
+<div id="boot" class="fixed inset-0 z-[100] flex flex-col items-center justify-center gap-4 bg-neutral-950 text-white transition-opacity duration-500">
+  <div class="h-12 w-12 animate-spin rounded-full border-4 border-red-600 border-t-transparent"></div>
+  <p class="text-xs font-semibold tracking-[0.3em] text-neutral-400">LOADING POS</p>
+</div>
+
+<div id="app" class="print:hidden"></div>
+<div id="toasts" class="pointer-events-none fixed right-4 top-4 z-[70] flex w-[calc(100%-2rem)] max-w-sm flex-col gap-2 print:hidden"></div>
+<div id="modal" class="print:hidden"></div>
+<div id="dialog" class="print:hidden"></div>
+<!-- Receipt print area: hidden on screen, the only thing visible when printing -->
+<div id="printArea" class="hidden print:block"></div>
+
+<script>
+'use strict';
+/* =====================================================================
+   OFFLINE POS — single-file application
+   Modules: Core/DB · Reports · Charts · UI (Toast/Modal/Confirm) ·
+            Barcode/Receipt · Views (Dashboard, POS, Products, Sales,
+            Reports, Settings, Backup) · App (router, shortcuts, boot)
+   All data lives in localStorage. No server, no database.
+   ===================================================================== */
+
+/* ======================= 1. CONSTANTS & HELPERS ======================= */
+const APP_ID = 'offline-pos';
+const APP_VERSION = 1;
+
+/** localStorage keys (one per data set) */
+const LS = {
+  settings: 'companySettings', products: 'products', categories: 'categories',
+  sales: 'sales', invoices: 'invoices', counter: 'invoiceCounter',
+  reports: 'reports', theme: 'theme', dashboard: 'dashboardData'
+};
+
+const DEFAULT_SETTINGS = {
+  name: 'Mathaka Gift Shop',
+  address: 'Mathaka Gift Shop, Dondra, Matara',
+  phone: '742899909',
+  logo: '',
+  currency: 'Rs',
+  taxPercent: 0,
+  footer: 'Thank You',
+  receiptSize: '80',
+  invoicePrefix: 'INV-',
+  cashier: 'Admin',
+  lowStockDefault: 5,
+  showBarcode: true,
+  autoPrint: false
+};
+const DEFAULT_CATEGORIES = ['Gift Items', 'Toys', 'Greeting Cards', 'Stationery', 'Flowers', 'Other'];
+
+const $ = (sel, root = document) => root.querySelector(sel);
+const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
+const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
+const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const num = (v) => { const n = parseFloat(String(v ?? '').replace(/,/g, '')); return Number.isFinite(n) ? n : 0; };
+const round2 = (n) => Math.round((n + Number.EPSILON) * 100) / 100;
+const pad = (n) => String(n).padStart(2, '0');
+const dateKey = (d) => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+const fmtNum = (n) => round2(n).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+const money = (n) => `${DB.settings.currency} ${fmtNum(n)}`;
+const fmtDate = (ts) => { const d = new Date(ts); return `${pad(d.getDate())}/${pad(d.getMonth() + 1)}/${d.getFullYear()}`; };
+const fmtTime = (ts) => new Date(ts).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+const debounce = (fn, ms = 120) => { let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), ms); }; };
+const initial = (s) => (String(s || '?').trim()[0] || '?').toUpperCase();
+const setText = (id, text) => { const el = document.getElementById(id); if (el && el.textContent !== text) el.textContent = text; };
+const byName = (a, b) => String(a.name).localeCompare(String(b.name));
+
+/** Trigger a file download from text content (works from file://) */
+function download(filename, text, type = 'application/json') {
+  const url = URL.createObjectURL(new Blob([text], { type }));
+  const a = document.createElement('a');
+  a.href = url; a.download = filename;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1500);
+}
+const readText = (file) => new Promise((res, rej) => { const r = new FileReader(); r.onload = () => res(r.result); r.onerror = rej; r.readAsText(file); });
+
+/** Resize an image file to a compact data URL (keeps localStorage small) */
+const imageToDataURL = (file, max = 320, mime = 'image/jpeg', quality = 0.82) => new Promise((res, rej) => {
+  const r = new FileReader();
+  r.onerror = rej;
+  r.onload = () => {
+    const img = new Image();
+    img.onerror = rej;
+    img.onload = () => {
+      const k = Math.min(1, max / Math.max(img.width, img.height));
+      const c = document.createElement('canvas');
+      c.width = Math.max(1, Math.round(img.width * k)); c.height = Math.max(1, Math.round(img.height * k));
+      const ctx = c.getContext('2d');
+      if (mime === 'image/jpeg') { ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, c.width, c.height); }
+      ctx.drawImage(img, 0, 0, c.width, c.height);
+      res(c.toDataURL(mime, quality));
+    };
+    img.src = r.result;
+  };
+  r.readAsDataURL(file);
+});
+
+/* Sale helpers */
+const saleDate = (s) => s.date || dateKey(new Date(s.ts));
+const saleProfit = (s) => round2(s.items.reduce((a, i) => a + (num(i.price) - num(i.cost)) * i.qty, 0) - num(s.discount));
+const saleQty = (s) => s.items.reduce((a, i) => a + i.qty, 0);
+const salesDesc = () => DB.sales.slice().sort((a, b) => String(b.ts).localeCompare(String(a.ts)));
+
+/* Stock helpers */
+const lowThreshold = (p) => (p.lowStock === null || p.lowStock === '' || p.lowStock === undefined || !Number.isFinite(+p.lowStock)) ? DB.settings.lowStockDefault : +p.lowStock;
+const isOut = (p) => p.stock <= 0;
+const isLow = (p) => p.stock <= lowThreshold(p);
+
+/** Totals for a cart: discount is capped at subtotal, tax is added on the discounted amount */
+function calcTotals(lines, discountValue, discountType, taxPercent) {
+  const subtotal = round2(lines.reduce((a, l) => a + l.price * l.qty, 0));
+  let discount = discountType === 'percent' ? subtotal * Math.min(Math.max(num(discountValue), 0), 100) / 100 : num(discountValue);
+  discount = round2(Math.min(Math.max(discount, 0), subtotal));
+  const tax = round2((subtotal - discount) * num(taxPercent) / 100);
+  return { subtotal, discount, tax, total: round2(subtotal - discount + tax) };
+}
+
+/* ======================= 2. DATABASE (localStorage) ======================= */
+const DB = {
+  settings: { ...DEFAULT_SETTINGS }, products: [], categories: [], sales: [], invoices: [],
+  counter: 1, reports: {}, theme: 'dark', dashboard: {},
+
+  load() {
+    const rd = (k, f) => { try { const v = localStorage.getItem(k); return v === null ? f : JSON.parse(v); } catch (e) { return f; } };
+    const arr = (v) => (Array.isArray(v) ? v : []);
+    this.settings = { ...DEFAULT_SETTINGS, ...(rd(LS.settings, {}) || {}) };
+    this.products = arr(rd(LS.products, []));
+    const cats = rd(LS.categories, null);
+    this.categories = Array.isArray(cats) ? cats : DEFAULT_CATEGORIES.slice();
+    this.sales = arr(rd(LS.sales, []));
+    this.invoices = arr(rd(LS.invoices, []));
+    this.counter = Math.max(1, parseInt(rd(LS.counter, 1), 10) || 1);
+    this.reports = rd(LS.reports, {}) || {};
+    this.dashboard = rd(LS.dashboard, {}) || {};
+    this.theme = rd(LS.theme, 'dark') === 'light' ? 'light' : 'dark';
+  },
+  /** Persist one or more data sets, e.g. DB.save('products','sales') */
+  save(...keys) {
+    for (const k of keys) {
+      try { localStorage.setItem(LS[k], JSON.stringify(this[k])); }
+      catch (e) { Toast.show('Browser storage is full. Export a backup and remove old data or images.', { type: 'error', duration: 7000 }); }
+    }
+  },
+  saveAll() { this.save(...Object.keys(LS)); },
+  firstRun() { return localStorage.getItem(LS.settings) === null; },
+  /** Recompute cached report/dashboard data after any sales change */
+  rebuildDerived() {
+    const byDate = {};
+    for (const s of this.sales) {
+      const d = byDate[saleDate(s)] || (byDate[saleDate(s)] = { revenue: 0, profit: 0, orders: 0, items: 0 });
+      d.revenue = round2(d.revenue + s.total); d.profit = round2(d.profit + saleProfit(s)); d.orders++; d.items += saleQty(s);
+    }
+    this.reports = { generatedAt: new Date().toISOString(), byDate };
+    const t = Reports.summarize(Reports.salesIn('today')), m = Reports.summarize(Reports.salesIn('month'));
+    this.dashboard = {
+      generatedAt: this.reports.generatedAt, todaySales: t.revenue, todayProfit: t.profit, todayOrders: t.count,
+      monthRevenue: m.revenue, monthProfit: m.profit, products: this.products.length,
+      lowStock: this.products.filter(isLow).length
+    };
+    this.save('reports', 'dashboard');
+  },
+  applyTheme() { document.documentElement.classList.toggle('dark', this.theme === 'dark'); },
+  /** Next invoice number (never reuses an existing one) */
+  peekInvoice() {
+    let n = this.counter;
+    const used = new Set(this.invoices.map((i) => i.invoice));
+    const make = (x) => `${this.settings.invoicePrefix}${String(x).padStart(6, '0')}`;
+    while (used.has(make(n))) n++;
+    return { no: make(n), n };
+  }
+};
+
+/* ======================= 3. REPORT AGGREGATION ======================= */
+const Reports = {
+  /** Inclusive date-key range for 'today' | 'week' (last 7 days) | 'month' (calendar month) */
+  range(period) {
+    const now = new Date(), today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    let from = new Date(today);
+    if (period === 'week') from.setDate(from.getDate() - 6);
+    if (period === 'month') from = new Date(now.getFullYear(), now.getMonth(), 1);
+    return { from: dateKey(from), to: dateKey(today) };
+  },
+  salesIn(period) {
+    const { from, to } = this.range(period);
+    return DB.sales.filter((s) => { const k = saleDate(s); return k >= from && k <= to; });
+  },
+  summarize(sales) {
+    const r = { revenue: 0, profit: 0, count: sales.length, avg: 0, items: 0, discount: 0, tax: 0 };
+    for (const s of sales) { r.revenue += s.total; r.profit += saleProfit(s); r.items += saleQty(s); r.discount += num(s.discount); r.tax += num(s.tax); }
+    r.revenue = round2(r.revenue); r.profit = round2(r.profit); r.discount = round2(r.discount); r.tax = round2(r.tax);
+    r.avg = r.count ? round2(r.revenue / r.count) : 0;
+    return r;
+  },
+  productStats(sales) {
+    const map = new Map();
+    for (const s of sales) for (const i of s.items) {
+      const key = i.id || i.name;
+      const e = map.get(key) || { id: i.id, name: i.name, qty: 0, revenue: 0 };
+      e.qty += i.qty; e.revenue = round2(e.revenue + i.price * i.qty); map.set(key, e);
+    }
+    return map;
+  },
+  categoryStats(sales) {
+    const map = new Map();
+    for (const s of sales) for (const i of s.items) {
+      const key = i.category || 'Uncategorized';
+      const e = map.get(key) || { name: key, qty: 0, revenue: 0 };
+      e.qty += i.qty; e.revenue = round2(e.revenue + i.price * i.qty); map.set(key, e);
+    }
+    return [...map.values()].sort((a, b) => b.revenue - a.revenue);
+  },
+  hourly(sales) {
+    const out = Array.from({ length: 24 }, (_, h) => ({ label: `${pad(h)}:00`, short: h % 3 === 0 ? pad(h) : '', value: 0, count: 0 }));
+    for (const s of sales) { const h = new Date(s.ts).getHours(); out[h].value = round2(out[h].value + s.total); out[h].count++; }
+    return out;
+  },
+  daily(period) {
+    const { from, to } = this.range(period), map = {};
+    for (const s of this.salesIn(period)) map[saleDate(s)] = (map[saleDate(s)] || 0) + s.total;
+    const out = [], d = new Date(from + 'T00:00:00'), end = new Date(to + 'T00:00:00');
+    while (d <= end) {
+      const k = dateKey(d);
+      out.push({ key: k, label: `${pad(d.getDate())}/${pad(d.getMonth() + 1)}`, short: period === 'month' ? String(d.getDate()) : d.toLocaleDateString('en-US', { weekday: 'short' }), value: round2(map[k] || 0) });
+      d.setDate(d.getDate() + 1);
+    }
+    return out;
+  }
+};
+
+/* ======================= 4. ICONS & SHARED STYLE TOKENS ======================= */
+const ICONS = {
+  home: '<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>',
+  cart: '<circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>',
+  box: '<path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/>',
+  receipt: '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>',
+  chart: '<line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>',
+  sliders: '<line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/>',
+  database: '<ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>',
+  plus: '<line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>',
+  minus: '<line x1="5" y1="12" x2="19" y2="12"/>',
+  trash: '<polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6m5 0V4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2"/>',
+  edit: '<path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>',
+  search: '<circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>',
+  x: '<line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>',
+  printer: '<polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/>',
+  eye: '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>',
+  moon: '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>',
+  sun: '<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>',
+  download: '<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>',
+  upload: '<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/>',
+  alert: '<path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>',
+  check: '<polyline points="20 6 9 17 4 12"/>',
+  undo: '<polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/>',
+  tag: '<path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/>',
+  dollar: '<line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>',
+  trend: '<polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/>',
+  layers: '<polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/>',
+  keyboard: '<rect x="2" y="4" width="20" height="16" rx="2" ry="2"/><path d="M6 8h.001M10 8h.001M14 8h.001M18 8h.001M8 12h.001M12 12h.001M16 12h.001M7 16h10"/>',
+  gift: '<polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>',
+  image: '<rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>',
+  refresh: '<polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>'
+};
+const icon = (name, cls = 'h-5 w-5') => `<svg class="${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[name] || ''}</svg>`;
+
+/** Reusable Tailwind class bundles (utility strings only) */
+const C = {};
+C.glass = 'bg-white/80 dark:bg-neutral-900/60 backdrop-blur-xl border border-neutral-200/80 dark:border-white/10';
+C.card = `min-w-0 rounded-2xl p-4 sm:p-5 shadow-sm ${C.glass}`;
+C.btn = 'inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition duration-150 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 disabled:opacity-50 disabled:pointer-events-none';
+C.primary = `${C.btn} bg-red-600 text-white shadow-lg shadow-red-600/25 hover:bg-red-500`;
+C.ghost = `${C.btn} bg-neutral-200/80 text-neutral-800 hover:bg-neutral-300 dark:bg-white/10 dark:text-neutral-100 dark:hover:bg-white/20`;
+C.danger = `${C.btn} bg-red-600/10 text-red-600 hover:bg-red-600 hover:text-white dark:text-red-400 dark:hover:text-white`;
+C.iconBtn = 'inline-flex h-9 w-9 items-center justify-center rounded-xl text-neutral-500 transition active:scale-90 hover:bg-neutral-200 hover:text-neutral-900 dark:hover:bg-white/10 dark:hover:text-white';
+C.input = 'w-full rounded-xl border border-neutral-300 bg-white px-3.5 py-2.5 text-sm text-neutral-900 placeholder:text-neutral-400 transition focus:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500/30 dark:border-white/10 dark:bg-neutral-900 dark:text-neutral-100 dark:placeholder:text-neutral-500';
+C.label = 'mb-1.5 block text-xs font-semibold uppercase tracking-wide text-neutral-500 dark:text-neutral-400';
+C.muted = 'text-neutral-500 dark:text-neutral-400';
+C.h2 = 'text-base font-bold tracking-tight';
+C.empty = 'flex flex-col items-center justify-center gap-2 rounded-2xl border border-dashed border-neutral-300 px-6 py-10 text-center text-sm text-neutral-500 dark:border-white/15 dark:text-neutral-400';
+C.divider = 'divide-y divide-neutral-200/70 dark:divide-white/5';
+
+
+/* ======================= 5. EVENT REGISTRIES ======================= */
+/** Click actions (data-action), live inputs (data-input), change events (data-change), forms (data-form) */
+const Actions = {}, Inputs = {}, Changes = {}, Forms = {};
+
+/* ======================= 6. TOASTS ======================= */
+const Toast = {
+  show(message, { type = 'info', duration = 3500, action = null } = {}) {
+    const box = $('#toasts');
+    if (!box) return;
+    while (box.children.length >= 4) box.firstChild.remove();
+    const tone = {
+      success: 'border-emerald-500/40 bg-emerald-50 text-emerald-800 dark:bg-emerald-950/80 dark:text-emerald-200',
+      error: 'border-red-500/40 bg-red-50 text-red-800 dark:bg-red-950/80 dark:text-red-200',
+      warn: 'border-amber-500/40 bg-amber-50 text-amber-800 dark:bg-amber-950/80 dark:text-amber-200',
+      info: 'border-neutral-300 bg-white text-neutral-800 dark:border-white/10 dark:bg-neutral-800 dark:text-neutral-100'
+    }[type] || '';
+    const ic = { success: 'check', error: 'alert', warn: 'alert', info: 'check' }[type];
+    const el = document.createElement('div');
+    el.className = `pointer-events-auto flex items-center gap-3 rounded-2xl border px-4 py-3 text-sm font-medium shadow-xl backdrop-blur-xl transition-all duration-300 opacity-0 translate-y-2 ${tone}`;
+    el.innerHTML = `${icon(ic, 'h-5 w-5 shrink-0')}<span class="flex-1 break-words"></span>`;
+    el.querySelector('span').textContent = message;
+    if (action) {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'shrink-0 rounded-lg bg-black/10 px-3 py-1 text-xs font-bold uppercase tracking-wide hover:bg-black/20 dark:bg-white/10 dark:hover:bg-white/20';
+      b.textContent = action.label;
+      b.addEventListener('click', () => { action.fn(); dismiss(); });
+      el.appendChild(b);
+    }
+    const dismiss = () => { el.classList.add('opacity-0', 'translate-y-2'); setTimeout(() => el.remove(), 300); };
+    box.appendChild(el);
+    requestAnimationFrame(() => requestAnimationFrame(() => el.classList.remove('opacity-0', 'translate-y-2')));
+    setTimeout(dismiss, action ? Math.max(duration, 7000) : duration);
+  },
+  success(m, o) { this.show(m, { ...o, type: 'success' }); },
+  error(m, o) { this.show(m, { ...o, type: 'error', duration: 5000 }); },
+  warn(m, o) { this.show(m, { ...o, type: 'warn', duration: 4500 }); },
+  info(m, o) { this.show(m, { ...o, type: 'info' }); }
+};
+
+/* ======================= 7. MODAL & CONFIRM DIALOG ======================= */
+const Modal = {
+  onClose: null,
+  open(html, { size = 'md', onClose = null } = {}) {
+    const w = { sm: 'max-w-sm', md: 'max-w-lg', lg: 'max-w-2xl', xl: 'max-w-4xl' }[size] || 'max-w-lg';
+    this.onClose = onClose;
+    $('#modal').innerHTML = `
+      <div data-action="modal-backdrop" class="fixed inset-0 z-50 flex items-end justify-center bg-black/60 backdrop-blur-sm sm:items-center sm:p-4">
+        <div id="modalPanel" role="dialog" aria-modal="true" class="max-h-[92vh] w-full ${w} scale-95 overflow-y-auto rounded-t-3xl border border-neutral-200 bg-white opacity-0 shadow-2xl transition duration-200 dark:border-white/10 dark:bg-neutral-900 sm:rounded-3xl">${html}</div>
+      </div>`;
+    requestAnimationFrame(() => requestAnimationFrame(() => { const p = $('#modalPanel'); if (p) p.classList.remove('scale-95', 'opacity-0'); }));
+  },
+  isOpen() { return $('#modal').childElementCount > 0; },
+  close() {
+    $('#modal').innerHTML = '';
+    $('#printArea').innerHTML = '';
+    const cb = this.onClose; this.onClose = null; if (cb) cb();
+  },
+  /** Standard modal header */
+  header(title, sub = '') {
+    return `<div class="sticky top-0 z-10 flex items-start justify-between gap-3 border-b border-neutral-200 bg-white/95 px-5 py-4 backdrop-blur dark:border-white/10 dark:bg-neutral-900/95">
+      <div><h3 class="text-lg font-bold tracking-tight">${esc(title)}</h3>${sub ? `<p class="text-xs ${C.muted}">${esc(sub)}</p>` : ''}</div>
+      <button type="button" data-action="modal-close" class="${C.iconBtn}" aria-label="Close">${icon('x')}</button></div>`;
+  }
+};
+
+const Confirm = {
+  _res: null,
+  ask({ title, message, confirmText = 'Confirm', danger = false, requireText = null }) {
+    return new Promise((res) => {
+      this._res = res;
+      $('#dialog').innerHTML = `
+        <div data-action="dialog-backdrop" class="fixed inset-0 z-[60] flex items-center justify-center bg-black/70 p-4 backdrop-blur-sm">
+          <div class="w-full max-w-sm rounded-3xl border border-neutral-200 bg-white p-6 shadow-2xl dark:border-white/10 dark:bg-neutral-900">
+            <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl ${danger ? 'bg-red-600/10 text-red-600' : 'bg-neutral-200 text-neutral-700 dark:bg-white/10 dark:text-white'}">${icon(danger ? 'trash' : 'alert', 'h-6 w-6')}</div>
+            <h3 class="text-lg font-bold">${esc(title)}</h3>
+            <p class="mt-1 text-sm ${C.muted}">${esc(message)}</p>
+            ${requireText ? `<input id="dialogInput" data-input="dialogInput" autocomplete="off" placeholder="Type ${esc(requireText)} to confirm" class="${C.input} mt-4" data-expect="${esc(requireText)}">` : ''}
+            <div class="mt-6 grid grid-cols-2 gap-3">
+              <button type="button" data-action="dialog-cancel" class="${C.ghost}">Cancel</button>
+              <button type="button" id="dialogOk" data-action="dialog-ok" ${requireText ? 'disabled' : ''} class="${danger ? `${C.btn} bg-red-600 text-white hover:bg-red-500` : C.primary}">${esc(confirmText)}</button>
+            </div>
+          </div>
+        </div>`;
+      const inp = $('#dialogInput');
+      (inp || $('#dialogOk')).focus();
+    });
+  },
+  isOpen() { return !!this._res; },
+  done(v) { const r = this._res; this._res = null; $('#dialog').innerHTML = ''; if (r) r(v); }
+};
+
+Actions['modal-close'] = () => Modal.close();
+Actions['modal-backdrop'] = (el, e) => { if (e.target === el) Modal.close(); };
+Actions['dialog-ok'] = () => Confirm.done(true);
+Actions['dialog-cancel'] = () => Confirm.done(false);
+Actions['dialog-backdrop'] = (el, e) => { if (e.target === el) Confirm.done(false); };
+Inputs.dialogInput = (el) => { $('#dialogOk').disabled = el.value.trim() !== el.dataset.expect; };
+
+/* ======================= 8. CHARTS (inline SVG, no libraries) ======================= */
+const Charts = {
+  /** Vertical bar chart. data: [{label, short, value}] */
+  bars(data, { height = 170, barSlot = 40 } = {}) {
+    const W = Math.max(data.length * barSlot, 280), H = height, padB = 22, padT = 8;
+    const max = Math.max(...data.map((d) => d.value), 1), bw = W / data.length;
+    let out = `<svg viewBox="0 0 ${W} ${H}" class="h-auto w-full" role="img" aria-label="Bar chart">`;
+    out += `<line x1="0" x2="${W}" y1="${H - padB}" y2="${H - padB}" class="stroke-neutral-300 dark:stroke-white/10"/>`;
+    data.forEach((d, i) => {
+      const h = d.value > 0 ? Math.max(3, (d.value / max) * (H - padB - padT)) : 0;
+      const x = i * bw + bw * 0.16, w = bw * 0.68, y = H - padB - h;
+      out += `<g><rect x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${w.toFixed(1)}" height="${h.toFixed(1)}" rx="3" class="fill-red-500 transition hover:fill-red-400"><title>${esc(d.label)}: ${esc(money(d.value))}</title></rect>`;
+      out += `<text x="${(x + w / 2).toFixed(1)}" y="${H - 7}" text-anchor="middle" class="fill-neutral-500 text-[10px]">${esc(d.short ?? d.label)}</text></g>`;
+    });
+    return out + '</svg>';
+  },
+  /** Thin horizontal progress bar (0..100) */
+  meter(pct, cls = 'fill-red-500') {
+    const p = Math.max(0, Math.min(100, pct));
+    return `<svg viewBox="0 0 100 4" preserveAspectRatio="none" class="h-1.5 w-full" aria-hidden="true"><rect width="100" height="4" class="fill-neutral-200 dark:fill-white/10"/><rect width="${p.toFixed(1)}" height="4" class="${cls}"/></svg>`;
+  }
+};
+
+/* ======================= 9. SMALL SHARED UI PIECES ======================= */
+const thumb = (p, size = 'h-12 w-12') => p.image
+  ? `<img src="${esc(p.image)}" alt="" loading="lazy" class="${size} shrink-0 rounded-xl object-cover">`
+  : `<div class="${size} flex shrink-0 items-center justify-center rounded-xl bg-linear-to-br from-red-600 to-red-950 text-lg font-bold text-white">${esc(initial(p.name))}</div>`;
+
+const stockBadge = (p) => isOut(p)
+  ? '<span class="rounded-full bg-red-600/15 px-2.5 py-1 text-xs font-bold text-red-600 dark:text-red-400">Out of stock</span>'
+  : isLow(p)
+    ? `<span class="rounded-full bg-amber-500/15 px-2.5 py-1 text-xs font-bold text-amber-600 dark:text-amber-400">Low · ${p.stock}</span>`
+    : `<span class="rounded-full bg-emerald-500/10 px-2.5 py-1 text-xs font-bold text-emerald-600 dark:text-emerald-400">${p.stock} in stock</span>`;
+
+const pageHead = (title, sub, right = '') => `
+  <div class="mb-5 flex flex-wrap items-end justify-between gap-3">
+    <div><h2 class="text-2xl font-extrabold tracking-tight">${esc(title)}</h2>${sub ? `<p class="text-sm ${C.muted}">${esc(sub)}</p>` : ''}</div>
+    <div class="flex flex-wrap items-center gap-2">${right}</div>
+  </div>`;
+
+const TONES = {
+  red: 'bg-red-600/10 text-red-600 dark:text-red-400',
+  green: 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400',
+  amber: 'bg-amber-500/10 text-amber-600 dark:text-amber-400',
+  slate: 'bg-neutral-500/10 text-neutral-600 dark:text-neutral-300'
+};
+const statCard = ({ label, value, sub = '', ic = 'dollar', tone = 'red', attrs = '' }) => `
+  <div ${attrs} class="${C.card} ${attrs ? 'cursor-pointer transition hover:border-red-500/50' : ''}">
+    <div class="flex items-start justify-between gap-2">
+      <div class="min-w-0">
+        <p class="text-[11px] font-semibold uppercase tracking-wide ${C.muted}">${esc(label)}</p>
+        <p class="mt-2 truncate text-xl font-extrabold tracking-tight sm:text-2xl">${value}</p>
+        ${sub ? `<p class="mt-0.5 text-xs ${C.muted}">${sub}</p>` : ''}
+      </div>
+      <span class="shrink-0 rounded-xl p-2.5 ${TONES[tone]}">${icon(ic)}</span>
+    </div>
+  </div>`;
+
+/** Spinner markup for loading buttons */
+const spinner = '<span class="h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent"></span>';
+
+
+/* ======================= 10. CODE 128 BARCODE (SVG) ======================= */
+const Code128 = {
+  /** Bar/space widths for symbol values 0..105 (Start A/B/C = 103/104/105) */
+  W: ['212222', '222122', '222221', '121223', '121322', '131222', '122213', '122312', '132212', '221213', '221312', '231212', '112232', '122132', '122231', '113222',
+    '123122', '123221', '223211', '221132', '221231', '213212', '223112', '312131', '311222', '321122', '321221', '312212', '322112', '322211', '212123', '212321',
+    '232121', '111323', '131123', '131321', '112313', '132113', '132311', '211313', '231113', '231311', '112133', '112331', '132131', '113123', '113321', '133121',
+    '313121', '211331', '231131', '213113', '213311', '213131', '311123', '311321', '331121', '312113', '312311', '332111', '314111', '221411', '431111', '111224',
+    '111422', '121124', '121421', '141122', '141221', '112214', '112412', '122114', '122411', '142112', '142211', '241211', '221114', '413111', '241112', '134111',
+    '111242', '121142', '121241', '114212', '124112', '124211', '411212', '421112', '421211', '212141', '214121', '412121', '111143', '111341', '131141', '114113',
+    '114311', '411113', '411311', '113141', '114131', '311141', '411131', '211412', '211214', '211232'],
+  STOP: '2331112',
+  /** Returns an SVG string encoding `text` (printable ASCII) as Code 128-B */
+  svg(text, cls = 'h-10 w-full fill-black') {
+    const vals = [104]; let sum = 104;
+    [...String(text)].forEach((ch, i) => {
+      let v = ch.charCodeAt(0) - 32; if (v < 0 || v > 94) v = 31;
+      vals.push(v); sum += v * (i + 1);
+    });
+    vals.push(sum % 103);
+    const widths = vals.map((v) => this.W[v]).join('') + this.STOP;
+    const quiet = 10; let x = quiet, rects = '';
+    [...widths].forEach((ch, i) => {
+      const w = +ch;
+      if (i % 2 === 0) rects += `<rect x="${x}" y="0" width="${w}" height="40"/>`;
+      x += w;
+    });
+    return `<svg viewBox="0 0 ${x + quiet} 40" preserveAspectRatio="none" class="${cls}" role="img" aria-label="Barcode ${esc(text)}">${rects}</svg>`;
+  }
+};
+
+/* ======================= 11. RECEIPT RENDERING & PRINTING ======================= */
+/** Builds receipt HTML for 58mm / 80mm thermal paper or A4. Always black-on-white. */
+function receiptHTML(sale, size = '80') {
+  const s = DB.settings, A4 = size === 'A4', n = (v) => fmtNum(v);
+  const wrap = { '58': 'w-[58mm] p-2 text-[10px] leading-snug', '80': 'w-[80mm] p-3 text-xs leading-snug', 'A4': 'mx-auto w-[190mm] p-10 text-sm leading-relaxed' }[size] || 'w-[80mm] p-3 text-xs leading-snug';
+  const hr = '<div class="my-2 border-t border-dashed border-black"></div>';
+  const row = (l, v, cls = '') => `<div class="flex justify-between gap-2 ${cls}"><span>${l}</span><span class="text-right">${v}</span></div>`;
+  const dt = new Date(sale.ts);
+
+  const head = `
+    <div class="text-center">
+      ${s.logo ? `<img src="${esc(s.logo)}" alt="" class="mx-auto mb-1 ${A4 ? 'max-h-24' : 'max-h-14'} max-w-[70%] object-contain">` : ''}
+      <div class="${A4 ? 'text-2xl' : 'text-sm'} font-extrabold uppercase tracking-wide">${esc(s.name)}</div>
+      ${s.address ? `<div>${esc(s.address)}</div>` : ''}
+      ${s.phone ? `<div>Tel: ${esc(s.phone)}</div>` : ''}
+    </div>${hr}
+    ${row('Invoice', `<b>${esc(sale.invoice)}</b>`)}
+    ${row('Date', fmtDate(sale.ts))}
+    ${row('Time', dt.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }))}
+    ${row('Cashier', esc(sale.cashier || s.cashier))}${hr}`;
+
+  const items = A4
+    ? `<table class="w-full border-collapse">
+        <thead><tr class="border-b-2 border-black text-left"><th class="py-1">#</th><th class="py-1">Item</th><th class="py-1 text-right">Qty</th><th class="py-1 text-right">Price</th><th class="py-1 text-right">Amount</th></tr></thead>
+        <tbody>${sale.items.map((i, k) => `<tr class="border-b border-neutral-300"><td class="py-1.5">${k + 1}</td><td class="py-1.5">${esc(i.name)}</td><td class="py-1.5 text-right">${i.qty}</td><td class="py-1.5 text-right">${n(i.price)}</td><td class="py-1.5 text-right">${n(i.price * i.qty)}</td></tr>`).join('')}</tbody></table>`
+    : `${row('<b>Item</b>', '<b>Amount</b>')}
+       ${sale.items.map((i) => `<div class="py-0.5"><div class="break-words font-semibold">${esc(i.name)}</div>${row(`${i.qty} x ${n(i.price)}`, n(i.price * i.qty))}</div>`).join('')}`;
+
+  const totals = `${hr}
+    <div class="${A4 ? 'ml-auto w-72' : ''}">
+    ${row('Subtotal', n(sale.subtotal))}
+    ${sale.discount > 0 ? row('Discount', `- ${n(sale.discount)}`) : ''}
+    ${sale.tax > 0 ? row(`Tax (${num(sale.taxPercent)}%)`, n(sale.tax)) : ''}
+    ${row('GRAND TOTAL', `${esc(s.currency)} ${n(sale.total)}`, `${A4 ? 'text-lg' : 'text-sm'} font-extrabold`)}
+    ${row('Cash', n(sale.cash))}
+    ${row('Balance', n(sale.balance), 'font-bold')}
+    </div>${hr}`;
+
+  const foot = `
+    <div class="text-center">
+      <div>Items: ${saleQty(sale)}</div>
+      ${s.footer ? `<div class="mt-1 font-bold">${esc(s.footer)}</div>` : ''}
+      ${s.showBarcode ? `<div class="mx-auto mt-2 ${A4 ? 'w-64' : 'w-4/5'}">${Code128.svg(sale.invoice)}<div class="mt-0.5 tracking-widest">${esc(sale.invoice)}</div></div>` : ''}
+    </div>`;
+
+  return `<div class="${wrap} bg-white font-mono text-black">${head}${items}${totals}${foot}</div>`;
+}
+
+const Receipt = {
+  sale: null, size: '80', after: false,
+  show(sale, { after = false } = {}) {
+    this.sale = sale; this.size = DB.settings.receiptSize; this.after = after;
+    this.draw();
+    if (after && DB.settings.autoPrint) setTimeout(() => this.print(), 350);
+  },
+  draw() {
+    const sizes = [['58', '58 mm'], ['80', '80 mm'], ['A4', 'A4']];
+    Modal.open(`
+      ${Modal.header('Receipt', this.sale.invoice)}
+      <div class="space-y-4 p-5">
+        <div class="grid grid-cols-3 gap-1 rounded-2xl bg-neutral-200/70 p-1 dark:bg-white/10">
+          ${sizes.map(([v, l]) => `<button type="button" data-action="receipt-size" data-size="${v}" class="rounded-xl py-2 text-sm font-semibold transition ${this.size === v ? 'bg-red-600 text-white shadow' : 'text-neutral-600 hover:bg-white/60 dark:text-neutral-300 dark:hover:bg-white/10'}">${l}</button>`).join('')}
+        </div>
+        <div class="overflow-x-auto rounded-2xl bg-neutral-200 p-4 dark:bg-neutral-800"><div class="mx-auto w-fit shadow-xl">${receiptHTML(this.sale, this.size)}</div></div>
+      </div>
+      <div class="sticky bottom-0 grid grid-cols-2 gap-3 border-t border-neutral-200 bg-white/95 p-4 backdrop-blur dark:border-white/10 dark:bg-neutral-900/95">
+        ${this.after
+          ? `<button type="button" data-action="receipt-new" class="${C.ghost}">${icon('plus')} New Sale</button>`
+          : `<button type="button" data-action="modal-close" class="${C.ghost}">Close</button>`}
+        <button type="button" data-action="receipt-print" class="${C.primary}">${icon('printer')} Print Bill</button>
+      </div>`, { size: this.size === 'A4' ? 'xl' : 'md', onClose: () => { this.sale = null; } });
+    $('#printArea').innerHTML = receiptHTML(this.sale, this.size);
+  },
+  print() { if (!this.sale) return; $('#printArea').innerHTML = receiptHTML(this.sale, this.size); window.print(); }
+};
+/** Print any sale directly (used by Sales History "print again") */
+const printSale = (sale, size = DB.settings.receiptSize) => { $('#printArea').innerHTML = receiptHTML(sale, size); window.print(); if (!Modal.isOpen()) setTimeout(() => { $('#printArea').innerHTML = ''; }, 1500); };
+
+Actions['receipt-size'] = (el) => { Receipt.size = el.dataset.size; Receipt.draw(); };
+Actions['receipt-print'] = () => Receipt.print();
+Actions['receipt-new'] = () => { Modal.close(); Router.to('pos'); setTimeout(() => $('#posSearch') && $('#posSearch').focus(), 60); };
+
+
+/* ======================= 12. DASHBOARD ======================= */
+const Dashboard = {
+  render() {
+    const t = Reports.summarize(Reports.salesIn('today')), m = Reports.summarize(Reports.salesIn('month'));
+    const low = DB.products.filter(isLow).sort((a, b) => a.stock - b.stock);
+    const recent = salesDesc().slice(0, 8);
+    const top = [...Reports.productStats(DB.sales).values()].sort((a, b) => b.qty - a.qty).slice(0, 5);
+    const maxQty = Math.max(...top.map((x) => x.qty), 1);
+    const week = Reports.daily('week');
+    const now = new Date();
+
+    $('#view').innerHTML = `
+      ${pageHead(`Welcome back${DB.settings.cashier ? ', ' + DB.settings.cashier : ''}`,
+        now.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }),
+        `<button type="button" data-action="nav" data-route="pos" class="${C.primary}">${icon('cart')} Start New Sale</button>`)}
+
+      <div class="grid grid-cols-2 gap-3 sm:gap-4 xl:grid-cols-4">
+        ${statCard({ label: "Today's Sales", value: money(t.revenue), sub: `${t.items} items sold`, ic: 'dollar', tone: 'red' })}
+        ${statCard({ label: "Today's Profit", value: money(t.profit), sub: 'After discounts', ic: 'trend', tone: 'green' })}
+        ${statCard({ label: "Today's Orders", value: t.count, sub: t.count ? `Avg ${money(t.avg)}` : 'No orders yet', ic: 'receipt', tone: 'slate' })}
+        ${statCard({ label: 'Monthly Revenue', value: money(m.revenue), sub: `${m.count} orders this month`, ic: 'chart', tone: 'red' })}
+        ${statCard({ label: 'Monthly Profit', value: money(m.profit), sub: 'This calendar month', ic: 'trend', tone: 'green' })}
+        ${statCard({ label: 'Products', value: DB.products.length, sub: `${DB.categories.length} categories`, ic: 'box', tone: 'slate', attrs: 'data-action="nav" data-route="products"' })}
+        ${statCard({ label: 'Low Stock', value: low.length, sub: low.length ? 'Needs restocking' : 'All stocked up', ic: 'alert', tone: low.length ? 'amber' : 'green', attrs: 'data-action="go-low-stock"' })}
+        ${statCard({ label: 'Items Sold (Month)', value: m.items, sub: `Tax collected ${money(m.tax)}`, ic: 'layers', tone: 'slate' })}
+      </div>
+
+      <div class="mt-4 grid gap-4 lg:grid-cols-3">
+        <section class="${C.card} lg:col-span-2">
+          <div class="mb-3 flex items-center justify-between"><h3 class="${C.h2}">Last 7 days</h3><span class="text-xs ${C.muted}">Revenue per day</span></div>
+          ${Charts.bars(week.map((d) => ({ ...d, short: d.short })), { height: 190, barSlot: 96 })}
+        </section>
+        <section class="${C.card}">
+          <h3 class="${C.h2} mb-3">Top selling products</h3>
+          ${top.length ? `<div class="space-y-3">${top.map((p, i) => `
+            <div><div class="mb-1 flex items-center justify-between gap-2 text-sm"><span class="truncate font-semibold">${i + 1}. ${esc(p.name)}</span><span class="shrink-0 text-xs ${C.muted}">${p.qty} sold</span></div>${Charts.meter((p.qty / maxQty) * 100)}</div>`).join('')}</div>`
+            : `<div class="${C.empty}">No sales yet.<br>Top sellers will appear here.</div>`}
+        </section>
+      </div>
+
+      <div class="mt-4 grid gap-4 lg:grid-cols-3">
+        <section class="${C.card} lg:col-span-2">
+          <div class="mb-2 flex items-center justify-between"><h3 class="${C.h2}">Recent sales</h3><button type="button" data-action="nav" data-route="sales" class="text-xs font-semibold text-red-600 hover:underline dark:text-red-400">View all</button></div>
+          ${recent.length ? `<div class="${C.divider}">${recent.map((s) => `
+            <button type="button" data-action="sale-view" data-id="${esc(s.id)}" class="flex w-full items-center gap-3 py-2.5 text-left transition hover:opacity-80">
+              <span class="rounded-xl bg-red-600/10 p-2.5 text-red-600 dark:text-red-400">${icon('receipt')}</span>
+              <span class="min-w-0 flex-1"><span class="block font-semibold">${esc(s.invoice)}</span><span class="block truncate text-xs ${C.muted}">${fmtDate(s.ts)} · ${fmtTime(s.ts)} · ${saleQty(s)} items</span></span>
+              <span class="font-bold">${money(s.total)}</span></button>`).join('')}</div>`
+            : `<div class="${C.empty}">${icon('receipt', 'h-8 w-8')}No sales yet. Complete your first sale in POS Billing.</div>`}
+        </section>
+        <section class="${C.card}">
+          <h3 class="${C.h2} mb-2">Low stock alerts</h3>
+          ${low.length ? `<div class="${C.divider}">${low.slice(0, 6).map((p) => `
+            <div class="flex items-center gap-3 py-2.5">${thumb(p, 'h-10 w-10')}<div class="min-w-0 flex-1"><p class="truncate text-sm font-semibold">${esc(p.name)}</p><p class="text-xs ${C.muted}">${esc(p.category)}</p></div>${stockBadge(p)}</div>`).join('')}</div>`
+            : `<div class="${C.empty}">${icon('check', 'h-8 w-8')}Nothing is running low.</div>`}
+        </section>
+      </div>`;
+  }
+};
+Actions.nav = (el) => Router.to(el.dataset.route);
+Actions['go-low-stock'] = () => { ProductsView.low = true; ProductsView.q = ''; ProductsView.cat = 'all'; Router.to('products'); };
+
+/* ======================= 13. POS BILLING SCREEN ======================= */
+const POS = {
+  cart: [], q: '', cat: 'all', discount: '', dtype: 'amount', cash: '', limit: 60,
+
+  /* ---- data helpers ---- */
+  product(id) { return DB.products.find((p) => p.id === id); },
+  lines() {
+    return this.cart.map((l) => { const p = this.product(l.id); return p ? { p, id: p.id, qty: l.qty, price: num(p.price), cost: num(p.cost) } : null; }).filter(Boolean);
+  },
+  totals() { return calcTotals(this.lines(), this.discount, this.dtype, DB.settings.taxPercent); },
+  filtered() {
+    const q = this.q.trim().toLowerCase();
+    return DB.products.filter((p) => (this.cat === 'all' || p.category === this.cat) &&
+      (!q || p.name.toLowerCase().includes(q) || (p.sku || '').toLowerCase().includes(q) || (p.barcode || '').toLowerCase().includes(q))).sort(byName);
+  },
+
+  /* ---- rendering ---- */
+  render() {
+    const taxLabel = num(DB.settings.taxPercent) > 0 ? `Tax (${num(DB.settings.taxPercent)}%)` : 'Tax';
+    $('#view').innerHTML = `
+      <div class="grid gap-4 lg:grid-cols-12">
+        <section class="min-w-0 space-y-3 lg:col-span-7 xl:col-span-8">
+          <div class="${C.card} space-y-3 p-3! sm:p-4!">
+            <div class="relative">
+              <span class="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-neutral-400">${icon('search')}</span>
+              <input id="posSearch" data-input="posSearch" value="${esc(this.q)}" autocomplete="off" placeholder="Search name or SKU · scan barcode and press Enter  (F2)" class="${C.input} py-3 pl-11 text-base">
+            </div>
+            <div id="posChips" class="flex gap-2 overflow-x-auto pb-1"></div>
+          </div>
+          <div id="posGrid" class="grid grid-cols-2 gap-3 sm:grid-cols-3 xl:grid-cols-4"></div>
+        </section>
+
+        <aside id="posCart" class="min-w-0 lg:col-span-5 xl:col-span-4">
+          <div class="${C.card} flex flex-col gap-4 lg:sticky lg:top-24">
+            <div class="flex items-center justify-between gap-2">
+              <div><h3 class="${C.h2}">Current sale</h3><p class="text-xs ${C.muted}">Invoice <span id="posInvoice" class="font-semibold"></span></p></div>
+              <button type="button" data-action="pos-new" class="${C.ghost} px-3! py-2!">${icon('plus', 'h-4 w-4')} New Sale</button>
+            </div>
+            <div id="cartLines" class="max-h-[38vh] min-h-[7rem] space-y-2 overflow-y-auto pr-1"></div>
+
+            <div class="space-y-2.5 border-t border-dashed border-neutral-300 pt-4 text-sm dark:border-white/15">
+              <div class="flex justify-between"><span class="${C.muted}">Subtotal</span><span id="posSubtotal" class="font-semibold"></span></div>
+              <div class="flex items-center justify-between gap-3">
+                <span class="${C.muted}">Discount <span class="text-[10px]">(F4)</span></span>
+                <div class="flex items-center gap-2">
+                  <div class="flex w-32 overflow-hidden rounded-xl border border-neutral-300 dark:border-white/10">
+                    <input id="posDiscount" data-input="posDiscount" value="${esc(this.discount)}" type="number" min="0" step="any" inputmode="decimal" placeholder="0" class="w-full min-w-0 bg-white px-3 py-2 text-right text-sm focus:outline-none dark:bg-neutral-900">
+                    <button type="button" id="posDtype" data-action="dtype" class="shrink-0 bg-neutral-200 px-2.5 text-xs font-bold hover:bg-neutral-300 dark:bg-white/10 dark:hover:bg-white/20" title="Switch between amount and percent"></button>
+                  </div>
+                  <span id="posDiscountAmt" class="w-24 text-right font-semibold text-red-600 dark:text-red-400"></span>
+                </div>
+              </div>
+              <div class="flex justify-between"><span class="${C.muted}">${taxLabel}</span><span id="posTax" class="font-semibold"></span></div>
+              <div class="flex items-end justify-between rounded-2xl bg-red-600 px-4 py-3 text-white shadow-lg shadow-red-600/25">
+                <span class="text-sm font-semibold uppercase tracking-wide opacity-90">Grand total</span>
+                <span id="posTotal" class="text-2xl font-extrabold tracking-tight"></span>
+              </div>
+              <div>
+                <label class="${C.label}" for="posCash">Cash received <span class="normal-case">(F3 · leave empty for exact)</span></label>
+                <input id="posCash" data-input="posCash" value="${esc(this.cash)}" type="number" min="0" step="any" inputmode="decimal" placeholder="0.00" class="${C.input} py-3 text-right text-lg font-bold">
+                <div class="mt-2 flex flex-wrap gap-1.5">
+                  <button type="button" data-action="quick-cash" data-v="exact" class="rounded-lg bg-red-600/10 px-3 py-1.5 text-xs font-bold text-red-600 hover:bg-red-600 hover:text-white dark:text-red-400 dark:hover:text-white">Exact</button>
+                  ${[100, 500, 1000, 2000, 5000].map((v) => `<button type="button" data-action="quick-cash" data-v="${v}" class="rounded-lg bg-neutral-200/80 px-3 py-1.5 text-xs font-bold hover:bg-neutral-300 dark:bg-white/10 dark:hover:bg-white/20">${v}</button>`).join('')}
+                </div>
+              </div>
+              <div class="flex justify-between text-base"><span id="posBalanceLabel" class="${C.muted}">Balance</span><span id="posBalance" class="font-extrabold"></span></div>
+            </div>
+
+            <div class="grid grid-cols-3 gap-2">
+              <button type="button" data-action="pos-cancel" class="${C.danger}">Cancel <span class="hidden text-[10px] opacity-70 xl:inline">F8</span></button>
+              <button type="button" id="posComplete" data-action="pos-complete" class="${C.primary} col-span-2 py-3 text-base">${icon('check')} Complete Sale <span class="hidden text-[10px] opacity-70 xl:inline">F9</span></button>
+            </div>
+          </div>
+        </aside>
+      </div>
+      <button type="button" id="posMobileBar" data-action="scroll-cart" class="fixed inset-x-4 bottom-20 z-30 hidden items-center justify-between rounded-2xl bg-red-600 px-5 py-3.5 text-white shadow-2xl shadow-red-600/40 lg:hidden!">
+        <span class="flex items-center gap-2 font-semibold">${icon('cart')}<span id="posMobileCount"></span></span><span id="posMobileTotal" class="text-lg font-extrabold"></span>
+      </button>`;
+    this.renderChips(); this.renderGrid(); this.renderCart(); this.updateTotals();
+  },
+
+  renderChips() {
+    const cats = ['all', ...DB.categories.filter((c) => DB.products.some((p) => p.category === c))];
+    const el = $('#posChips'); if (!el) return;
+    el.innerHTML = cats.map((c) => `<button type="button" data-action="pos-chip" data-cat="${esc(c)}" class="shrink-0 rounded-full px-4 py-1.5 text-sm font-semibold transition ${this.cat === c ? 'bg-red-600 text-white shadow shadow-red-600/30' : 'bg-neutral-200/80 hover:bg-neutral-300 dark:bg-white/10 dark:hover:bg-white/20'}">${c === 'all' ? 'All' : esc(c)}</button>`).join('');
+  },
+
+  renderGrid() {
+    const el = $('#posGrid'); if (!el) return;
+    if (!DB.products.length) {
+      el.innerHTML = `<div class="${C.empty} col-span-full">${icon('box', 'h-10 w-10')}<p class="text-base font-semibold">No products yet</p><p>Add your products to start billing.</p>
+        <div class="mt-2 flex gap-2"><button type="button" data-action="nav" data-route="products" class="${C.primary}">Add products</button><button type="button" data-action="sample-products" class="${C.ghost}">Load sample products</button></div></div>`;
+      return;
+    }
+    const list = this.filtered();
+    if (!list.length) { el.innerHTML = `<div class="${C.empty} col-span-full">${icon('search', 'h-8 w-8')}No products match your search.</div>`; return; }
+    el.innerHTML = list.slice(0, this.limit).map((p) => {
+      const out = isOut(p), low = !out && isLow(p);
+      return `<button type="button" data-action="pos-add" data-id="${esc(p.id)}" ${out ? 'disabled' : ''} class="group flex flex-col overflow-hidden rounded-2xl border border-neutral-200/80 bg-white/80 text-left shadow-sm transition active:scale-95 hover:border-red-500/60 hover:shadow-lg hover:shadow-red-600/10 disabled:pointer-events-none disabled:opacity-40 dark:border-white/10 dark:bg-neutral-900/60">
+        <div class="relative aspect-[4/3] w-full overflow-hidden bg-neutral-200 dark:bg-neutral-800">
+          ${p.image ? `<img src="${esc(p.image)}" alt="" loading="lazy" class="h-full w-full object-cover transition duration-300 group-hover:scale-105">` : `<div class="flex h-full w-full items-center justify-center bg-linear-to-br from-red-600 to-red-950 text-3xl font-extrabold text-white/90">${esc(initial(p.name))}</div>`}
+          <span class="absolute right-2 top-2 rounded-full px-2 py-0.5 text-[10px] font-bold text-white ${out ? 'bg-red-600' : low ? 'bg-amber-500' : 'bg-black/60'}">${out ? 'OUT' : p.stock + ' left'}</span>
+        </div>
+        <div class="p-3"><p class="line-clamp-2 min-h-[2.5rem] text-sm font-semibold leading-tight">${esc(p.name)}</p><p class="mt-1 text-base font-extrabold text-red-600 dark:text-red-400">${money(p.price)}</p></div></button>`;
+    }).join('') + (list.length > this.limit ? `<button type="button" data-action="pos-more" class="${C.ghost} col-span-full">Show more (${list.length - this.limit} more)</button>` : '');
+  },
+
+  renderCart() {
+    const el = $('#cartLines'); if (!el) return;
+    const lines = this.lines();
+    el.innerHTML = lines.length ? lines.map((l) => `
+      <div class="rounded-xl bg-neutral-100/80 p-2.5 dark:bg-white/5">
+        <div class="flex items-start justify-between gap-2">
+          <p class="min-w-0 flex-1 break-words text-sm font-semibold leading-tight">${esc(l.p.name)}</p>
+          <button type="button" data-action="cart-remove" data-id="${esc(l.id)}" class="${C.iconBtn} h-7! w-7! text-red-500" aria-label="Remove">${icon('x', 'h-4 w-4')}</button>
+        </div>
+        <div class="mt-2 flex items-center justify-between gap-2">
+          <div class="flex items-center gap-1">
+            <button type="button" data-action="cart-dec" data-id="${esc(l.id)}" class="${C.iconBtn} h-8! w-8! bg-neutral-200 dark:bg-white/10" aria-label="Decrease">${icon('minus', 'h-4 w-4')}</button>
+            <input type="number" min="1" step="1" inputmode="numeric" value="${l.qty}" data-change="cartQty" data-id="${esc(l.id)}" class="h-8 w-12 rounded-lg border border-neutral-300 bg-white text-center text-sm font-bold focus:border-red-500 focus:outline-none dark:border-white/10 dark:bg-neutral-900" aria-label="Quantity">
+            <button type="button" data-action="cart-inc" data-id="${esc(l.id)}" class="${C.iconBtn} h-8! w-8! bg-neutral-200 dark:bg-white/10" aria-label="Increase">${icon('plus', 'h-4 w-4')}</button>
+          </div>
+          <span class="text-xs ${C.muted}">× ${fmtNum(l.price)}</span>
+          <span class="text-sm font-extrabold">${fmtNum(l.price * l.qty)}</span>
+        </div>
+      </div>`).join('')
+      : `<div class="${C.empty} h-full">${icon('cart', 'h-8 w-8')}Cart is empty.<br>Tap a product or scan a barcode.</div>`;
+  },
+
+  /** Update numbers only (keeps focus in inputs) */
+  updateTotals() {
+    const t = this.totals(), lines = this.lines(), count = lines.reduce((a, l) => a + l.qty, 0);
+    setText('posInvoice', DB.peekInvoice().no);
+    setText('posSubtotal', money(t.subtotal));
+    setText('posDiscountAmt', t.discount > 0 ? `- ${money(t.discount)}` : money(0));
+    setText('posTax', money(t.tax));
+    setText('posTotal', money(t.total));
+    const dt = $('#posDtype'); if (dt) dt.textContent = this.dtype === 'percent' ? '%' : DB.settings.currency;
+    const cash = this.cash === '' ? null : num(this.cash), bal = cash === null ? 0 : round2(cash - t.total);
+    const label = $('#posBalanceLabel'), val = $('#posBalance');
+    if (label && val) {
+      const short = cash !== null && bal < 0;
+      label.textContent = short ? 'Amount due' : 'Balance';
+      val.textContent = money(short ? -bal : bal);
+      val.classList.toggle('text-red-600', short); val.classList.toggle('dark:text-red-400', short);
+      val.classList.toggle('text-emerald-600', !short); val.classList.toggle('dark:text-emerald-400', !short);
+    }
+    const btn = $('#posComplete'); if (btn) btn.disabled = !lines.length;
+    const bar = $('#posMobileBar');
+    if (bar) { bar.classList.toggle('hidden', !count); bar.classList.toggle('flex', !!count); setText('posMobileCount', `${count} item${count === 1 ? '' : 's'}`); setText('posMobileTotal', money(t.total)); }
+  },
+
+  /* ---- cart operations ---- */
+  add(id, qty = 1) {
+    const p = this.product(id); if (!p) return;
+    if (isOut(p)) return Toast.warn(`${p.name} is out of stock`);
+    const line = this.cart.find((l) => l.id === id), have = line ? line.qty : 0;
+    if (have + qty > p.stock) return Toast.warn(`Only ${p.stock} of "${p.name}" in stock`);
+    if (line) line.qty += qty; else this.cart.unshift({ id, qty });
+    this.renderCart(); this.updateTotals();
+  },
+  setQty(id, qty) {
+    const p = this.product(id), line = this.cart.find((l) => l.id === id); if (!p || !line) return;
+    qty = Math.floor(num(qty));
+    if (qty <= 0) return this.remove(id);
+    if (qty > p.stock) { Toast.warn(`Only ${p.stock} of "${p.name}" in stock`); qty = p.stock; }
+    line.qty = qty; this.renderCart(); this.updateTotals();
+  },
+  remove(id) { this.cart = this.cart.filter((l) => l.id !== id); this.renderCart(); this.updateTotals(); },
+  reset() {
+    this.cart = []; this.q = ''; this.cat = 'all'; this.discount = ''; this.dtype = 'amount'; this.cash = ''; this.limit = 60;
+    if (Router.current === 'pos') { this.render(); const s = $('#posSearch'); if (s) s.focus(); }
+  },
+
+  /** Barcode scanners "type" the code then press Enter */
+  submitSearch() {
+    const q = this.q.trim().toLowerCase(); if (!q) return;
+    const exact = DB.products.find((p) => (p.barcode || '').toLowerCase() === q || (p.sku || '').toLowerCase() === q);
+    const hit = exact || (this.filtered().length === 1 ? this.filtered()[0] : null);
+    if (!hit) return Toast.warn(this.filtered().length ? 'Multiple matches — tap the product' : `No product found for "${this.q}"`);
+    this.add(hit.id); this.q = ''; const s = $('#posSearch'); if (s) { s.value = ''; s.focus(); } this.renderGrid();
+  },
+
+  async cancel() {
+    if (!this.cart.length) return Toast.info('Nothing to cancel');
+    if (await Confirm.ask({ title: 'Cancel this sale?', message: 'All items in the cart will be removed.', confirmText: 'Cancel sale', danger: true })) { this.reset(); Toast.info('Sale cancelled'); }
+  },
+  async newSale() {
+    if (this.cart.length && !(await Confirm.ask({ title: 'Start a new sale?', message: 'The current cart will be cleared.', confirmText: 'New sale' }))) return;
+    this.reset();
+  },
+
+  /** Validate, save the sale, deduct stock, show the receipt */
+  async complete() {
+    const lines = this.lines();
+    if (!lines.length) return Toast.warn('Cart is empty');
+    for (const l of lines) if (l.qty > l.p.stock) return Toast.error(`Not enough stock for "${l.p.name}" (${l.p.stock} left)`);
+    const t = this.totals(), cash = this.cash === '' ? t.total : num(this.cash);
+    if (cash + 0.001 < t.total) { Toast.error('Cash received is less than the grand total'); const c = $('#posCash'); if (c) c.focus(); return; }
+
+    const btn = $('#posComplete'); if (btn) { btn.disabled = true; btn.innerHTML = `${spinner} Saving…`; }
+    await sleep(350);
+
+    const inv = DB.peekInvoice(), now = new Date();
+    const sale = {
+      id: uid(), invoice: inv.no, ts: now.toISOString(), date: dateKey(now),
+      items: lines.map((l) => ({ id: l.id, name: l.p.name, sku: l.p.sku, category: l.p.category, price: l.price, cost: l.cost, qty: l.qty })),
+      subtotal: t.subtotal, discount: t.discount, discountType: this.dtype, discountInput: num(this.discount),
+      taxPercent: num(DB.settings.taxPercent), tax: t.tax, total: t.total, cash: round2(cash), balance: round2(cash - t.total),
+      cashier: DB.settings.cashier
+    };
+    const warn = [];
+    for (const l of lines) { l.p.stock -= l.qty; if (isLow(l.p)) warn.push(l.p); }
+    DB.sales.push(sale);
+    DB.invoices.push({ invoice: sale.invoice, saleId: sale.id, ts: sale.ts, total: sale.total });
+    DB.counter = inv.n + 1;
+    DB.save('products', 'sales', 'invoices', 'counter'); DB.rebuildDerived();
+
+    this.cart = []; this.q = ''; this.cat = 'all'; this.discount = ''; this.dtype = 'amount'; this.cash = '';
+    this.render();
+    Toast.success(`Sale ${sale.invoice} completed`);
+    warn.forEach((p) => Toast.warn(p.stock <= 0 ? `${p.name} is now out of stock` : `Low stock: ${p.name} (${p.stock} left)`));
+    Receipt.show(sale, { after: true });
+  }
+};
+
+Actions['pos-add'] = (el) => POS.add(el.dataset.id);
+Actions['cart-inc'] = (el) => POS.add(el.dataset.id);
+Actions['cart-dec'] = (el) => { const l = POS.cart.find((x) => x.id === el.dataset.id); if (l) POS.setQty(l.id, l.qty - 1); };
+Actions['cart-remove'] = (el) => POS.remove(el.dataset.id);
+Actions['pos-chip'] = (el) => { POS.cat = el.dataset.cat; POS.limit = 60; POS.renderChips(); POS.renderGrid(); };
+Actions['pos-more'] = () => { POS.limit += 60; POS.renderGrid(); };
+Actions.dtype = () => { POS.dtype = POS.dtype === 'percent' ? 'amount' : 'percent'; POS.updateTotals(); };
+Actions['quick-cash'] = (el) => {
+  POS.cash = el.dataset.v === 'exact' ? String(POS.totals().total) : el.dataset.v;
+  const c = $('#posCash'); if (c) c.value = POS.cash; POS.updateTotals();
+};
+Actions['pos-complete'] = () => POS.complete();
+Actions['pos-cancel'] = () => POS.cancel();
+Actions['pos-new'] = () => POS.newSale();
+Actions['scroll-cart'] = () => { const c = $('#posCart'); if (c) c.scrollIntoView({ behavior: 'smooth', block: 'start' }); };
+Inputs.posSearch = debounce((el) => { POS.q = el.value; POS.limit = 60; POS.renderGrid(); }, 90);
+Inputs.posDiscount = (el) => { POS.discount = el.value; POS.updateTotals(); };
+Inputs.posCash = (el) => { POS.cash = el.value; POS.updateTotals(); };
+Changes.cartQty = (el) => POS.setQty(el.dataset.id, el.value);
+
+
+/* ======================= 14. PRODUCT MANAGEMENT ======================= */
+const SAMPLE_PRODUCTS = [
+  ['Gift Box (Large)', 'Gift Items', 2500, 1700, 12], ['Gift Box (Small)', 'Gift Items', 1200, 800, 20], ['Teddy Bear 30cm', 'Toys', 1800, 1200, 8],
+  ['Toy Car', 'Toys', 650, 400, 25], ['Birthday Card', 'Greeting Cards', 150, 70, 60], ['Wedding Card', 'Greeting Cards', 350, 190, 30],
+  ['Notebook A5', 'Stationery', 280, 170, 40], ['Gel Pen Set', 'Stationery', 420, 260, 3], ['Artificial Rose', 'Flowers', 200, 90, 50], ['Photo Frame 6x8', 'Gift Items', 950, 600, 14]
+];
+
+/** Normalise any product-like object (used for forms, imports and restores) */
+function cleanProduct(raw, fallbackSku) {
+  const img = typeof raw.image === 'string' && raw.image.startsWith('data:image/') ? raw.image : '';
+  const ls = raw.lowStock === null || raw.lowStock === '' || raw.lowStock === undefined ? null : Math.max(0, Math.floor(num(raw.lowStock)));
+  return {
+    id: String(raw.id || uid()), name: String(raw.name || '').trim() || 'Unnamed product',
+    sku: String(raw.sku || fallbackSku || '').trim(), barcode: String(raw.barcode || '').trim(),
+    category: String(raw.category || 'Other').trim() || 'Other',
+    price: Math.max(0, round2(num(raw.price))), cost: Math.max(0, round2(num(raw.cost))),
+    stock: Math.max(0, Math.floor(num(raw.stock))), lowStock: ls, image: img,
+    createdAt: raw.createdAt || new Date().toISOString(), updatedAt: new Date().toISOString()
+  };
+}
+const nextSku = () => { let n = DB.products.length + 1, sku; do { sku = `SKU-${String(n++).padStart(5, '0')}`; } while (DB.products.some((p) => p.sku === sku)); return sku; };
+const ensureCategory = (name) => { if (name && !DB.categories.includes(name)) { DB.categories.push(name); DB.save('categories'); } };
+
+const ProductsView = {
+  q: '', cat: 'all', low: false, limit: 100, tmpImage: '',
+
+  render() {
+    $('#view').innerHTML = `
+      ${pageHead('Products', `${DB.products.length} products · ${DB.products.filter(isLow).length} low on stock`,
+        `<button type="button" data-action="categories-open" class="${C.ghost}">${icon('tag')} Categories</button>
+         <button type="button" data-action="product-add" class="${C.primary}">${icon('plus')} Add Product</button>`)}
+      <div class="${C.card} mb-4 grid gap-3 p-3! sm:grid-cols-[1fr_14rem_auto] sm:p-4!">
+        <div class="relative"><span class="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-neutral-400">${icon('search')}</span>
+          <input id="prodSearch" data-input="prodSearch" value="${esc(this.q)}" autocomplete="off" placeholder="Search name, SKU, barcode or category" class="${C.input} pl-11"></div>
+        <select data-change="prodCat" class="${C.input}"><option value="all">All categories</option>${DB.categories.map((c) => `<option value="${esc(c)}" ${this.cat === c ? 'selected' : ''}>${esc(c)}</option>`).join('')}</select>
+        <button type="button" id="lowToggle" data-action="filter-low" class="${C.btn} ${this.low ? 'bg-amber-500 text-white' : 'bg-neutral-200/80 dark:bg-white/10'}">${icon('alert', 'h-4 w-4')} Low stock only</button>
+      </div>
+      <div class="${C.card} p-2! sm:p-3!"><div id="productList"></div></div>`;
+    this.renderList();
+  },
+
+  filtered() {
+    const q = this.q.trim().toLowerCase();
+    return DB.products.filter((p) => (this.cat === 'all' || p.category === this.cat) && (!this.low || isLow(p)) &&
+      (!q || [p.name, p.sku, p.barcode, p.category].some((v) => String(v || '').toLowerCase().includes(q)))).sort(byName);
+  },
+
+  renderList() {
+    const el = $('#productList'); if (!el) return;
+    if (!DB.products.length) {
+      el.innerHTML = `<div class="${C.empty}">${icon('box', 'h-10 w-10')}<p class="text-base font-semibold">Your product list is empty</p><p>Add your first product, or load a few samples to try the system.</p>
+        <div class="mt-2 flex gap-2"><button type="button" data-action="product-add" class="${C.primary}">Add product</button><button type="button" data-action="sample-products" class="${C.ghost}">Load samples</button></div></div>`;
+      return;
+    }
+    const list = this.filtered();
+    if (!list.length) { el.innerHTML = `<div class="${C.empty}">${icon('search', 'h-8 w-8')}No products match the filters.</div>`; return; }
+    el.innerHTML = `<div class="${C.divider}">${list.slice(0, this.limit).map((p) => `
+      <div class="flex items-center gap-3 rounded-xl p-2.5 transition hover:bg-neutral-100/70 dark:hover:bg-white/5">
+        ${thumb(p)}
+        <div class="min-w-0 flex-1">
+          <p class="truncate font-semibold">${esc(p.name)}</p>
+          <p class="truncate text-xs ${C.muted}">${esc(p.category)} · ${esc(p.sku || '—')}${p.barcode ? ' · ' + esc(p.barcode) : ''}</p>
+          <p class="mt-0.5 text-xs font-semibold sm:hidden">${money(p.price)}</p>
+        </div>
+        <div class="hidden w-32 text-right sm:block"><p class="text-sm font-bold">${money(p.price)}</p><p class="text-xs ${C.muted}">Cost ${money(p.cost)}</p></div>
+        <div class="hidden w-28 text-right md:block">${stockBadge(p)}</div>
+        <div class="w-12 text-right text-sm font-bold md:hidden">${p.stock}</div>
+        <div class="flex gap-0.5">
+          <button type="button" data-action="product-edit" data-id="${esc(p.id)}" class="${C.iconBtn}" aria-label="Edit">${icon('edit', 'h-4 w-4')}</button>
+          <button type="button" data-action="product-delete" data-id="${esc(p.id)}" class="${C.iconBtn} hover:text-red-500!" aria-label="Delete">${icon('trash', 'h-4 w-4')}</button>
+        </div>
+      </div>`).join('')}</div>
+      ${list.length > this.limit ? `<button type="button" data-action="product-more" class="${C.ghost} mt-2 w-full">Show more (${list.length - this.limit} more)</button>` : ''}`;
+  },
+
+  /** Add / edit form (modal) */
+  openForm(id) {
+    const p = id ? DB.products.find((x) => x.id === id) : null;
+    this.tmpImage = p ? p.image || '' : '';
+    const cats = [...new Set([...DB.categories, ...(p && p.category ? [p.category] : [])])];
+    const f = (label, inner, span = false) => `<label class="${span ? 'sm:col-span-2' : ''}"><span class="${C.label}">${label}</span>${inner}</label>`;
+    const inp = (name, o = {}) => `<input name="${name}" ${o.id ? `id="${o.id}"` : ''} type="${o.type || 'text'}" value="${esc(o.value ?? '')}" ${o.req ? 'required' : ''} ${o.min !== undefined ? `min="${o.min}"` : ''} ${o.step ? `step="${o.step}"` : ''} placeholder="${esc(o.ph || '')}" autocomplete="off" class="${C.input}">`;
+    Modal.open(`
+      <form data-form="product" autocomplete="off">
+        ${Modal.header(p ? 'Edit product' : 'Add product', p ? p.name : 'Fill in the product details')}
+        <input type="hidden" name="id" value="${esc(p ? p.id : '')}">
+        <div class="grid gap-4 p-5 sm:grid-cols-2">
+          ${f('Product name *', inp('name', { id: 'pfName', value: p?.name, req: true, ph: 'e.g. Teddy Bear 30cm' }), true)}
+          ${f('Category', `<select name="category" class="${C.input}">${cats.map((c) => `<option value="${esc(c)}" ${p && p.category === c ? 'selected' : ''}>${esc(c)}</option>`).join('')}</select>`)}
+          ${f('SKU', inp('sku', { value: p?.sku, ph: 'Auto-generated if empty' }))}
+          ${f('Barcode', `<div class="flex gap-2">${inp('barcode', { id: 'pfBarcode', value: p?.barcode, ph: 'Scan or type' })}<button type="button" data-action="gen-barcode" class="${C.ghost} shrink-0 px-3!" title="Generate a code">${icon('refresh', 'h-4 w-4')}</button></div>`)}
+          ${f('Selling price *', inp('price', { type: 'number', value: p?.price, req: true, min: 0, step: 'any', ph: '0.00' }))}
+          ${f('Buying price (cost)', inp('cost', { type: 'number', value: p?.cost, min: 0, step: 'any', ph: '0.00' }))}
+          ${f('Stock quantity', inp('stock', { type: 'number', value: p ? p.stock : 0, min: 0, step: 1 }))}
+          ${f('Low stock alert at', inp('lowStock', { type: 'number', value: p?.lowStock ?? '', min: 0, step: 1, ph: `Default (${DB.settings.lowStockDefault})` }))}
+          <div class="sm:col-span-2">
+            <span class="${C.label}">Product image</span>
+            <div class="flex items-center gap-4">
+              <div id="pfImgPreview" class="shrink-0"></div>
+              <div class="flex flex-wrap gap-2">
+                <label class="${C.ghost} cursor-pointer">${icon('image', 'h-4 w-4')} Choose image<input type="file" accept="image/*" data-change="prodImage" class="hidden"></label>
+                <button type="button" data-action="img-remove" class="${C.ghost}">Remove</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sticky bottom-0 grid grid-cols-2 gap-3 border-t border-neutral-200 bg-white/95 p-4 backdrop-blur dark:border-white/10 dark:bg-neutral-900/95">
+          <button type="button" data-action="modal-close" class="${C.ghost}">Cancel</button>
+          <button type="submit" class="${C.primary}">${icon('check')} ${p ? 'Save changes' : 'Add product'}</button>
+        </div>
+      </form>`, { size: 'lg' });
+    this.drawImagePreview();
+    setTimeout(() => { const n = $('#pfName'); if (n) n.focus(); }, 80);
+  },
+  drawImagePreview() {
+    const el = $('#pfImgPreview'); if (!el) return;
+    el.innerHTML = this.tmpImage ? `<img src="${esc(this.tmpImage)}" alt="" class="h-20 w-20 rounded-2xl object-cover">`
+      : `<div class="flex h-20 w-20 items-center justify-center rounded-2xl bg-neutral-200 text-neutral-400 dark:bg-white/10">${icon('image', 'h-7 w-7')}</div>`;
+  },
+
+  save(form) {
+    const f = new FormData(form), id = f.get('id');
+    const raw = Object.fromEntries(f.entries());
+    const name = String(raw.name || '').trim();
+    if (!name) return Toast.error('Product name is required');
+    if (num(raw.price) < 0 || num(raw.cost) < 0) return Toast.error('Prices cannot be negative');
+    const sku = String(raw.sku || '').trim() || (id ? '' : nextSku()), barcode = String(raw.barcode || '').trim();
+    if (sku && DB.products.some((p) => p.id !== id && p.sku.toLowerCase() === sku.toLowerCase())) return Toast.error(`SKU "${sku}" is already used by another product`);
+    if (barcode && DB.products.some((p) => p.id !== id && p.barcode && p.barcode === barcode)) return Toast.error(`Barcode "${barcode}" is already used by another product`);
+    const existing = id ? DB.products.find((p) => p.id === id) : null;
+    const data = cleanProduct({ ...raw, id: id || uid(), sku, image: this.tmpImage, createdAt: existing?.createdAt });
+    if (existing) Object.assign(existing, data); else DB.products.unshift(data);
+    ensureCategory(data.category);
+    DB.save('products'); DB.rebuildDerived();
+    Modal.close(); this.render(); Toast.success(existing ? 'Product updated' : 'Product added');
+  },
+
+  async remove(id) {
+    const idx = DB.products.findIndex((p) => p.id === id); if (idx < 0) return;
+    const p = DB.products[idx];
+    if (!(await Confirm.ask({ title: 'Delete product?', message: `"${p.name}" will be removed from your catalogue. Past sales are not affected.`, confirmText: 'Delete', danger: true }))) return;
+    DB.products.splice(idx, 1); POS.cart = POS.cart.filter((l) => l.id !== id);
+    DB.save('products'); DB.rebuildDerived(); this.render();
+    Toast.show(`Deleted "${p.name}"`, { type: 'info', action: { label: 'Undo', fn: () => { DB.products.splice(Math.min(idx, DB.products.length), 0, p); DB.save('products'); DB.rebuildDerived(); if (Router.current === 'products') this.render(); Toast.success('Product restored'); } } });
+  },
+
+  openCategories() {
+    const rows = DB.categories.map((c) => {
+      const n = DB.products.filter((p) => p.category === c).length;
+      return `<div class="flex items-center justify-between gap-3 py-2.5"><div><p class="font-semibold">${esc(c)}</p><p class="text-xs ${C.muted}">${n} product${n === 1 ? '' : 's'}</p></div>
+        <button type="button" data-action="cat-delete" data-name="${esc(c)}" class="${C.iconBtn} hover:text-red-500!" aria-label="Delete category">${icon('trash', 'h-4 w-4')}</button></div>`;
+    }).join('');
+    Modal.open(`${Modal.header('Categories', 'Group your products')}
+      <div class="space-y-4 p-5">
+        <form data-form="category" class="flex gap-2"><input name="name" required maxlength="40" placeholder="New category name" autocomplete="off" class="${C.input}"><button type="submit" class="${C.primary} shrink-0">${icon('plus', 'h-4 w-4')} Add</button></form>
+        <div class="${C.divider}">${rows || `<p class="py-4 text-center text-sm ${C.muted}">No categories yet.</p>`}</div>
+      </div>`, { size: 'sm' });
+  }
+};
+
+Actions['product-add'] = () => ProductsView.openForm();
+Actions['product-edit'] = (el) => ProductsView.openForm(el.dataset.id);
+Actions['product-delete'] = (el) => ProductsView.remove(el.dataset.id);
+Actions['product-more'] = () => { ProductsView.limit += 100; ProductsView.renderList(); };
+Actions['categories-open'] = () => ProductsView.openCategories();
+Actions['filter-low'] = () => { ProductsView.low = !ProductsView.low; ProductsView.render(); };
+Actions['gen-barcode'] = () => {
+  let code; do { code = '2' + String(Math.floor(Math.random() * 1e11)).padStart(11, '0'); } while (DB.products.some((p) => p.barcode === code));
+  const el = $('#pfBarcode'); if (el) el.value = code;
+};
+Actions['img-remove'] = () => { ProductsView.tmpImage = ''; ProductsView.drawImagePreview(); };
+Actions['cat-delete'] = async (el) => {
+  const name = el.dataset.name, used = DB.products.filter((p) => p.category === name).length;
+  if (used) return Toast.error(`"${name}" is used by ${used} product(s). Move them to another category first.`);
+  if (!(await Confirm.ask({ title: 'Delete category?', message: `"${name}" will be removed.`, confirmText: 'Delete', danger: true }))) return;
+  DB.categories = DB.categories.filter((c) => c !== name); DB.save('categories'); ProductsView.openCategories();
+};
+Actions['sample-products'] = () => {
+  SAMPLE_PRODUCTS.forEach(([name, category, price, cost, stock], i) => {
+    ensureCategory(category);
+    DB.products.push(cleanProduct({ name, category, price, cost, stock, sku: `SMP-${String(i + 1).padStart(3, '0')}`, barcode: `890000000${String(i + 1).padStart(3, '0')}` }));
+  });
+  DB.save('products'); DB.rebuildDerived(); Toast.success('Sample products added'); Views[Router.current].render();
+};
+Inputs.prodSearch = debounce((el) => { ProductsView.q = el.value; ProductsView.limit = 100; ProductsView.renderList(); }, 90);
+Changes.prodCat = (el) => { ProductsView.cat = el.value; ProductsView.limit = 100; ProductsView.renderList(); };
+Changes.prodImage = async (el) => {
+  const file = el.files[0]; if (!file) return;
+  try { ProductsView.tmpImage = await imageToDataURL(file, 360); ProductsView.drawImagePreview(); } catch (e) { Toast.error('Could not read that image'); }
+  el.value = '';
+};
+Forms.product = (form) => ProductsView.save(form);
+Forms.category = (form) => {
+  const name = String(new FormData(form).get('name') || '').trim();
+  if (!name) return;
+  if (DB.categories.some((c) => c.toLowerCase() === name.toLowerCase())) return Toast.warn('That category already exists');
+  DB.categories.push(name); DB.save('categories'); ProductsView.openCategories(); Toast.success('Category added');
+};
+
+/* ======================= 15. SALES HISTORY ======================= */
+const SalesView = {
+  q: '', date: '', limit: 50,
+
+  render() {
+    $('#view').innerHTML = `
+      ${pageHead('Sales History', 'Search, view, reprint or delete past bills')}
+      <div class="${C.card} mb-4 grid gap-3 p-3! sm:grid-cols-[1fr_12rem_auto] sm:p-4!">
+        <div class="relative"><span class="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-neutral-400">${icon('search')}</span>
+          <input id="saleSearch" data-input="saleSearch" value="${esc(this.q)}" autocomplete="off" placeholder="Search invoice number or product" class="${C.input} pl-11"></div>
+        <input type="date" id="saleDate" data-change="saleDate" value="${esc(this.date)}" class="${C.input}" aria-label="Filter by date">
+        <button type="button" data-action="sales-clear" class="${C.ghost}">Clear</button>
+      </div>
+      <div id="saleSummary" class="mb-3 flex flex-wrap gap-2 text-sm"></div>
+      <div class="${C.card} p-2! sm:p-3!"><div id="saleList"></div></div>`;
+    this.renderList();
+  },
+
+  filtered() {
+    const q = this.q.trim().toLowerCase();
+    return salesDesc().filter((s) => (!this.date || saleDate(s) === this.date) &&
+      (!q || s.invoice.toLowerCase().includes(q) || s.items.some((i) => i.name.toLowerCase().includes(q) || String(i.sku || '').toLowerCase().includes(q))));
+  },
+
+  renderList() {
+    const el = $('#saleList'); if (!el) return;
+    const list = this.filtered(), sum = Reports.summarize(list);
+    const chip = (l, v) => `<span class="rounded-full bg-neutral-200/80 px-3 py-1 dark:bg-white/10"><span class="${C.muted}">${l}</span> <b>${v}</b></span>`;
+    $('#saleSummary').innerHTML = chip('Bills', list.length) + chip('Revenue', money(sum.revenue)) + chip('Profit', money(sum.profit));
+    if (!list.length) { el.innerHTML = `<div class="${C.empty}">${icon('receipt', 'h-8 w-8')}${DB.sales.length ? 'No bills match your filters.' : 'No sales recorded yet.'}</div>`; return; }
+    el.innerHTML = `<div class="${C.divider}">${list.slice(0, this.limit).map((s) => `
+      <div class="flex items-center gap-3 rounded-xl p-2.5 transition hover:bg-neutral-100/70 dark:hover:bg-white/5">
+        <span class="hidden rounded-xl bg-red-600/10 p-2.5 text-red-600 sm:block dark:text-red-400">${icon('receipt')}</span>
+        <div class="min-w-0 flex-1">
+          <p class="font-semibold">${esc(s.invoice)}</p>
+          <p class="truncate text-xs ${C.muted}">${fmtDate(s.ts)} · ${fmtTime(s.ts)} · ${saleQty(s)} items · ${esc(s.cashier || '')}</p>
+          <p class="truncate text-xs ${C.muted}">${esc(s.items.map((i) => i.name).join(', '))}</p>
+        </div>
+        <div class="text-right"><p class="font-bold">${money(s.total)}</p><p class="hidden text-xs text-emerald-600 sm:block dark:text-emerald-400">Profit ${money(saleProfit(s))}</p></div>
+        <div class="flex gap-0.5">
+          <button type="button" data-action="sale-view" data-id="${esc(s.id)}" class="${C.iconBtn}" aria-label="View bill">${icon('eye', 'h-4 w-4')}</button>
+          <button type="button" data-action="sale-print" data-id="${esc(s.id)}" class="${C.iconBtn}" aria-label="Print again">${icon('printer', 'h-4 w-4')}</button>
+          <button type="button" data-action="sale-delete" data-id="${esc(s.id)}" class="${C.iconBtn} hover:text-red-500!" aria-label="Delete sale">${icon('trash', 'h-4 w-4')}</button>
+        </div>
+      </div>`).join('')}</div>
+      ${list.length > this.limit ? `<button type="button" data-action="sales-more" class="${C.ghost} mt-2 w-full">Show more (${list.length - this.limit} more)</button>` : ''}`;
+  },
+
+  async remove(id) {
+    const idx = DB.sales.findIndex((s) => s.id === id); if (idx < 0) return;
+    const sale = DB.sales[idx];
+    if (!(await Confirm.ask({ title: `Delete ${sale.invoice}?`, message: 'The bill is removed from reports and the sold quantities are returned to stock.', confirmText: 'Delete sale', danger: true }))) return;
+    const adjust = (dir) => { for (const i of sale.items) { const p = DB.products.find((x) => x.id === i.id); if (p) p.stock = Math.max(0, p.stock + dir * i.qty); } };
+    const invEntry = DB.invoices.find((x) => x.saleId === sale.id);
+    adjust(+1); DB.sales.splice(idx, 1); DB.invoices = DB.invoices.filter((x) => x.saleId !== sale.id);
+    DB.save('products', 'sales', 'invoices'); DB.rebuildDerived(); this.renderList();
+    Toast.show(`Deleted ${sale.invoice}`, { type: 'info', action: { label: 'Undo', fn: () => {
+      adjust(-1); DB.sales.push(sale); if (invEntry) DB.invoices.push(invEntry);
+      DB.save('products', 'sales', 'invoices'); DB.rebuildDerived(); if (Router.current === 'sales') this.renderList(); Toast.success('Sale restored');
+    } } });
+  }
+};
+const findSale = (id) => DB.sales.find((s) => s.id === id);
+Actions['sale-view'] = (el) => { const s = findSale(el.dataset.id); if (s) Receipt.show(s); };
+Actions['sale-print'] = (el) => { const s = findSale(el.dataset.id); if (s) printSale(s); };
+Actions['sale-delete'] = (el) => SalesView.remove(el.dataset.id);
+Actions['sales-more'] = () => { SalesView.limit += 50; SalesView.renderList(); };
+Actions['sales-clear'] = () => { SalesView.q = ''; SalesView.date = ''; SalesView.limit = 50; SalesView.render(); };
+Inputs.saleSearch = debounce((el) => { SalesView.q = el.value; SalesView.limit = 50; SalesView.renderList(); }, 90);
+Changes.saleDate = (el) => { SalesView.date = el.value; SalesView.limit = 50; SalesView.renderList(); };
+
+
+/* ======================= 16. REPORTS ======================= */
+const ReportsView = {
+  period: 'today',
+
+  render() {
+    const sales = Reports.salesIn(this.period), sum = Reports.summarize(sales);
+    const stats = Reports.productStats(sales);
+    const sold = [...stats.values()];
+    const most = sold.sort((a, b) => b.qty - a.qty).slice(0, 8);
+    // Least sold: every catalogue product (including those with zero sales in the period)
+    const least = DB.products.map((p) => ({ name: p.name, qty: (stats.get(p.id) || { qty: 0 }).qty })).sort((a, b) => a.qty - b.qty).slice(0, 8);
+    const cats = Reports.categoryStats(sales), catMax = Math.max(...cats.map((c) => c.revenue), 1);
+    const hourly = Reports.hourly(sales);
+    const maxQ = Math.max(...most.map((x) => x.qty), 1);
+    const periods = [['today', 'Today'], ['week', 'Last 7 days'], ['month', 'This month']];
+    const { from, to } = Reports.range(this.period);
+
+    $('#view').innerHTML = `
+      ${pageHead('Reports', from === to ? fmtDate(from + 'T00:00:00') : `${fmtDate(from + 'T00:00:00')} – ${fmtDate(to + 'T00:00:00')}`,
+        `<div class="grid grid-cols-3 gap-1 rounded-2xl bg-neutral-200/70 p-1 dark:bg-white/10">${periods.map(([v, l]) => `<button type="button" data-action="report-period" data-period="${v}" class="rounded-xl px-3 py-2 text-sm font-semibold transition ${this.period === v ? 'bg-red-600 text-white shadow' : 'text-neutral-600 hover:bg-white/60 dark:text-neutral-300 dark:hover:bg-white/10'}">${l}</button>`).join('')}</div>`)}
+
+      <div class="grid grid-cols-2 gap-3 sm:gap-4 xl:grid-cols-4">
+        ${statCard({ label: 'Revenue', value: money(sum.revenue), sub: `Tax included ${money(sum.tax)}`, ic: 'dollar', tone: 'red' })}
+        ${statCard({ label: 'Profit', value: money(sum.profit), sub: `Discounts given ${money(sum.discount)}`, ic: 'trend', tone: 'green' })}
+        ${statCard({ label: 'Transactions', value: sum.count, sub: `${sum.items} items sold`, ic: 'receipt', tone: 'slate' })}
+        ${statCard({ label: 'Average sale', value: money(sum.avg), sub: 'Revenue per transaction', ic: 'layers', tone: 'amber' })}
+      </div>
+
+      <div class="mt-4 grid gap-4 lg:grid-cols-2">
+        <section class="${C.card} lg:col-span-2">
+          <div class="mb-3 flex items-center justify-between"><h3 class="${C.h2}">Hourly sales</h3><span class="text-xs ${C.muted}">Revenue by hour of day</span></div>
+          ${sum.count ? Charts.bars(hourly, { height: 180, barSlot: 28 }) : `<div class="${C.empty}">No sales in this period.</div>`}
+        </section>
+        ${this.period !== 'today' ? `<section class="${C.card} lg:col-span-2">
+          <div class="mb-3 flex items-center justify-between"><h3 class="${C.h2}">Daily revenue</h3></div>
+          ${Charts.bars(Reports.daily(this.period), { height: 180, barSlot: this.period === 'month' ? 30 : 96 })}
+        </section>` : ''}
+
+        <section class="${C.card}">
+          <h3 class="${C.h2} mb-3">Most sold products</h3>
+          ${most.length ? `<div class="space-y-3">${most.map((p, i) => `<div><div class="mb-1 flex justify-between gap-2 text-sm"><span class="truncate font-semibold">${i + 1}. ${esc(p.name)}</span><span class="shrink-0 text-xs ${C.muted}">${p.qty} sold · ${money(p.revenue)}</span></div>${Charts.meter((p.qty / maxQ) * 100)}</div>`).join('')}</div>` : `<div class="${C.empty}">No sales in this period.</div>`}
+        </section>
+        <section class="${C.card}">
+          <h3 class="${C.h2} mb-3">Least sold products</h3>
+          ${least.length ? `<div class="${C.divider}">${least.map((p) => `<div class="flex items-center justify-between gap-2 py-2 text-sm"><span class="truncate font-semibold">${esc(p.name)}</span><span class="shrink-0 rounded-full bg-neutral-200/80 px-2.5 py-0.5 text-xs font-bold dark:bg-white/10">${p.qty} sold</span></div>`).join('')}</div>` : `<div class="${C.empty}">No products yet.</div>`}
+        </section>
+        <section class="${C.card} lg:col-span-2">
+          <h3 class="${C.h2} mb-3">Category sales</h3>
+          ${cats.length ? `<div class="grid gap-x-8 gap-y-3 sm:grid-cols-2">${cats.map((c) => `<div><div class="mb-1 flex justify-between gap-2 text-sm"><span class="truncate font-semibold">${esc(c.name)}</span><span class="shrink-0 text-xs ${C.muted}">${c.qty} items · ${money(c.revenue)}</span></div>${Charts.meter((c.revenue / catMax) * 100)}</div>`).join('')}</div>` : `<div class="${C.empty}">No sales in this period.</div>`}
+        </section>
+      </div>`;
+  }
+};
+Actions['report-period'] = (el) => { ReportsView.period = el.dataset.period; ReportsView.render(); };
+
+/* ======================= 17. SETTINGS ======================= */
+const SettingsView = {
+  tmpLogo: '',
+
+  render() {
+    const s = DB.settings; this.tmpLogo = s.logo || '';
+    const field = (label, inner, span = false) => `<label class="${span ? 'sm:col-span-2' : ''}"><span class="${C.label}">${label}</span>${inner}</label>`;
+    const inp = (name, value, o = {}) => `<input name="${name}" type="${o.type || 'text'}" value="${esc(value ?? '')}" ${o.min !== undefined ? `min="${o.min}"` : ''} ${o.step ? `step="${o.step}"` : ''} ${o.ph ? `placeholder="${esc(o.ph)}"` : ''} autocomplete="off" class="${C.input}">`;
+    const check = (name, label, on) => `<label class="flex cursor-pointer items-center gap-3 rounded-xl bg-neutral-100/80 p-3 text-sm font-semibold dark:bg-white/5"><input type="checkbox" name="${name}" ${on ? 'checked' : ''} class="h-5 w-5 rounded accent-red-600">${label}</label>`;
+    $('#view').innerHTML = `
+      ${pageHead('Settings', 'Company details, receipts and preferences')}
+      <div class="grid gap-4 xl:grid-cols-[1fr_24rem]">
+        <form data-form="settings" class="min-w-0 space-y-4">
+          <section class="${C.card}">
+            <h3 class="${C.h2} mb-4">Company information</h3>
+            <div class="grid gap-4 sm:grid-cols-2">
+              ${field('Company name', inp('name', s.name), true)}
+              ${field('Address', inp('address', s.address), true)}
+              ${field('Phone number', inp('phone', s.phone))}
+              ${field('Cashier name', inp('cashier', s.cashier))}
+              <div class="sm:col-span-2"><span class="${C.label}">Company logo (optional)</span>
+                <div class="flex items-center gap-4"><div id="logoPreview" class="shrink-0"></div>
+                  <div class="flex flex-wrap gap-2"><label class="${C.ghost} cursor-pointer">${icon('upload', 'h-4 w-4')} Upload logo<input type="file" accept="image/*" data-change="logoFile" class="hidden"></label><button type="button" data-action="logo-remove" class="${C.ghost}">Remove</button></div></div></div>
+            </div>
+          </section>
+          <section class="${C.card}">
+            <h3 class="${C.h2} mb-4">Billing</h3>
+            <div class="grid gap-4 sm:grid-cols-2">
+              ${field('Currency symbol', inp('currency', s.currency, { ph: 'Rs' }))}
+              ${field('Tax percentage (%)', inp('taxPercent', s.taxPercent, { type: 'number', min: 0, step: 'any', ph: '0' }))}
+              ${field('Invoice prefix', inp('invoicePrefix', s.invoicePrefix))}
+              ${field('Next invoice number', inp('invoiceCounter', DB.counter, { type: 'number', min: 1, step: 1 }))}
+              ${field('Default low-stock level', inp('lowStockDefault', s.lowStockDefault, { type: 'number', min: 0, step: 1 }))}
+              ${field('Default receipt size', `<select name="receiptSize" class="${C.input}">${[['58', '58 mm thermal'], ['80', '80 mm thermal'], ['A4', 'A4 sheet']].map(([v, l]) => `<option value="${v}" ${s.receiptSize === v ? 'selected' : ''}>${l}</option>`).join('')}</select>`)}
+              ${field('Receipt footer', inp('footer', s.footer, { ph: 'Thank You' }), true)}
+              ${check('showBarcode', 'Print a barcode on receipts', s.showBarcode)}
+              ${check('autoPrint', 'Open print dialog after each sale', s.autoPrint)}
+            </div>
+          </section>
+          <section class="${C.card}">
+            <h3 class="${C.h2} mb-4">Appearance</h3>
+            <div class="grid max-w-sm grid-cols-2 gap-2">
+              ${[['dark', 'Dark', 'moon'], ['light', 'Light', 'sun']].map(([v, l, ic]) => `<label class="cursor-pointer"><input type="radio" name="theme" value="${v}" ${DB.theme === v ? 'checked' : ''} data-change="theme" class="peer hidden"><span class="flex items-center justify-center gap-2 rounded-xl border border-neutral-300 py-3 text-sm font-semibold transition peer-checked:border-red-600 peer-checked:bg-red-600 peer-checked:text-white dark:border-white/10">${icon(ic, 'h-4 w-4')} ${l}</span></label>`).join('')}
+            </div>
+            <p class="mt-2 text-xs ${C.muted}">Brand colours: red &amp; black. Your choice is remembered on this device.</p>
+          </section>
+          <div class="sticky bottom-20 z-10 lg:bottom-4"><button type="submit" class="${C.primary} w-full py-3 text-base">${icon('check')} Save settings</button></div>
+        </form>
+        <aside><div class="${C.card} xl:sticky xl:top-24">
+          <h3 class="${C.h2} mb-3">Receipt preview</h3>
+          <div class="overflow-x-auto rounded-2xl bg-neutral-200 p-3 dark:bg-neutral-800"><div class="mx-auto w-fit shadow-xl">${receiptHTML(this.sample(), s.receiptSize === 'A4' ? '80' : s.receiptSize)}</div></div>
+          <p class="mt-2 text-xs ${C.muted}">Sample bill using your saved settings.</p>
+        </div></aside>
+      </div>`;
+    this.drawLogo();
+  },
+  sample() {
+    const items = [{ name: 'Gift Box (Large)', qty: 1, price: 2500 }, { name: 'Birthday Card', qty: 2, price: 150 }];
+    const sub = 2800, tax = round2(sub * num(DB.settings.taxPercent) / 100);
+    return { invoice: DB.peekInvoice().no, ts: new Date().toISOString(), cashier: DB.settings.cashier, items, subtotal: sub, discount: 0, tax, taxPercent: DB.settings.taxPercent, total: sub + tax, cash: 3000, balance: 3000 - sub - tax };
+  },
+  drawLogo() {
+    const el = $('#logoPreview'); if (!el) return;
+    el.innerHTML = this.tmpLogo ? `<img src="${esc(this.tmpLogo)}" alt="" class="h-16 max-w-[8rem] rounded-xl bg-white object-contain p-1">`
+      : `<div class="flex h-16 w-16 items-center justify-center rounded-xl bg-linear-to-br from-red-600 to-red-950 text-white">${icon('gift', 'h-7 w-7')}</div>`;
+  },
+  save(form) {
+    const f = Object.fromEntries(new FormData(form).entries());
+    const name = String(f.name || '').trim();
+    if (!name) return Toast.error('Company name is required');
+    DB.settings = {
+      ...DB.settings, name, address: String(f.address || '').trim(), phone: String(f.phone || '').trim(), cashier: String(f.cashier || '').trim() || 'Admin',
+      logo: this.tmpLogo, currency: String(f.currency || '').trim() || 'Rs', taxPercent: Math.max(0, num(f.taxPercent)),
+      invoicePrefix: String(f.invoicePrefix || '').trim(), lowStockDefault: Math.max(0, Math.floor(num(f.lowStockDefault))),
+      receiptSize: ['58', '80', 'A4'].includes(f.receiptSize) ? f.receiptSize : '80', footer: String(f.footer || '').trim(),
+      showBarcode: form.elements.showBarcode.checked, autoPrint: form.elements.autoPrint.checked
+    };
+    const c = Math.max(1, Math.floor(num(f.invoiceCounter))); if (c) DB.counter = c;
+    DB.theme = f.theme === 'light' ? 'light' : 'dark'; DB.applyTheme();
+    DB.save('settings', 'counter', 'theme'); DB.rebuildDerived();
+    Shell.render(); Router.go(); Toast.success('Settings saved');
+  }
+};
+Actions['logo-remove'] = () => { SettingsView.tmpLogo = ''; SettingsView.drawLogo(); };
+Changes.logoFile = async (el) => {
+  const file = el.files[0]; if (!file) return;
+  try { SettingsView.tmpLogo = await imageToDataURL(file, 360, 'image/png'); SettingsView.drawLogo(); } catch (e) { Toast.error('Could not read that image'); }
+  el.value = '';
+};
+Changes.theme = (el) => { DB.theme = el.value; DB.applyTheme(); DB.save('theme'); Shell.render(); };
+Forms.settings = (form) => SettingsView.save(form);
+
+/* ======================= 18. IMPORT / EXPORT / BACKUP ======================= */
+const stamp = () => dateKey(new Date());
+const DataView = {
+  render() {
+    let bytes = 0; try { for (const k of Object.values(LS)) bytes += (localStorage.getItem(k) || '').length * 2; } catch (e) { /* ignore */ }
+    const card = (ic, title, text, buttons) => `<section class="${C.card} flex flex-col gap-4"><div class="flex items-start gap-3"><span class="rounded-xl p-2.5 ${TONES.red}">${icon(ic)}</span><div><h3 class="${C.h2}">${title}</h3><p class="text-sm ${C.muted}">${text}</p></div></div><div class="mt-auto flex flex-wrap gap-2">${buttons}</div></section>`;
+    const file = (action, label) => `<label class="${C.ghost} cursor-pointer">${icon('upload', 'h-4 w-4')} ${label}<input type="file" accept="application/json,.json" data-change="${action}" class="hidden"></label>`;
+    $('#view').innerHTML = `
+      ${pageHead('Backup & Data', 'Export, import and restore your data. Everything is stored in this browser.')}
+      <div class="mb-4 flex flex-wrap gap-2 text-sm">
+        <span class="rounded-full bg-neutral-200/80 px-3 py-1 dark:bg-white/10"><span class="${C.muted}">Products</span> <b>${DB.products.length}</b></span>
+        <span class="rounded-full bg-neutral-200/80 px-3 py-1 dark:bg-white/10"><span class="${C.muted}">Sales</span> <b>${DB.sales.length}</b></span>
+        <span class="rounded-full bg-neutral-200/80 px-3 py-1 dark:bg-white/10"><span class="${C.muted}">Storage used</span> <b>${(bytes / 1024).toFixed(1)} KB</b></span>
+      </div>
+      <div class="grid gap-4 md:grid-cols-2">
+        ${card('box', 'Products', 'Export your catalogue as JSON, or import products from a JSON file. Matching SKU / barcode items are updated, new ones are added.',
+          `<button type="button" data-action="export-products" class="${C.primary}">${icon('download', 'h-4 w-4')} Export products</button>${file('importProducts', 'Import products')}`)}
+        ${card('receipt', 'Sales', 'Download every recorded sale as a JSON file for accounting or analysis.',
+          `<button type="button" data-action="export-sales" class="${C.primary}">${icon('download', 'h-4 w-4')} Export sales</button>`)}
+        ${card('database', 'Complete system backup', 'Products, categories, sales, invoices, settings, logo and theme in a single file. Keep copies on a USB drive or another computer.',
+          `<button type="button" data-action="backup" class="${C.primary}">${icon('download', 'h-4 w-4')} Download backup</button>${file('restoreBackup', 'Restore backup')}`)}
+        ${card('alert', 'Reset everything', 'Permanently erases all products, sales and settings from this browser. Download a backup first.',
+          `<button type="button" data-action="reset-all" class="${C.danger}">${icon('trash', 'h-4 w-4')} Reset everything</button>`)}
+      </div>`;
+  },
+
+  collectBackup() {
+    return { app: APP_ID, version: APP_VERSION, exportedAt: new Date().toISOString(), data: Object.fromEntries(Object.entries(LS).map(([k, key]) => [key, DB[k]])) };
+  },
+  async parseFile(el) {
+    const file = el.files[0]; el.value = ''; if (!file) return null;
+    try { return JSON.parse(await readText(file)); } catch (e) { Toast.error('That file is not valid JSON'); return null; }
+  },
+  async importProducts(el) {
+    const obj = await this.parseFile(el); if (!obj) return;
+    const list = Array.isArray(obj) ? obj : obj.products;
+    if (!Array.isArray(list)) return Toast.error('No products found in that file');
+    let added = 0, updated = 0;
+    for (const raw of list) {
+      if (!raw || typeof raw !== 'object' || !String(raw.name || '').trim()) continue;
+      const hit = DB.products.find((p) => (raw.id && p.id === raw.id) || (raw.sku && p.sku && p.sku.toLowerCase() === String(raw.sku).toLowerCase()) || (raw.barcode && p.barcode && p.barcode === String(raw.barcode)));
+      if (hit) { Object.assign(hit, cleanProduct({ ...raw, id: hit.id, createdAt: hit.createdAt }, hit.sku)); updated++; }
+      else { DB.products.push(cleanProduct(raw, nextSku())); added++; }
+    }
+    (Array.isArray(obj.categories) ? obj.categories : []).forEach((c) => ensureCategory(String(c)));
+    DB.products.forEach((p) => ensureCategory(p.category));
+    DB.save('products', 'categories'); DB.rebuildDerived(); this.render();
+    Toast.success(`Import finished: ${added} added, ${updated} updated`);
+  },
+  async restore(el) {
+    const obj = await this.parseFile(el); if (!obj) return;
+    const d = obj && obj.data;
+    if (!d || typeof d !== 'object' || (obj.app && obj.app !== APP_ID)) return Toast.error('This is not a valid POS backup file');
+    if (!Array.isArray(d[LS.products] || []) || !Array.isArray(d[LS.sales] || [])) return Toast.error('Backup file is damaged');
+    if (!(await Confirm.ask({ title: 'Restore this backup?', message: `Backup from ${obj.exportedAt ? fmtDate(obj.exportedAt) : 'unknown date'}. All current data on this device will be replaced.`, confirmText: 'Restore', danger: true }))) return;
+    for (const key of Object.values(LS)) if (d[key] !== undefined) localStorage.setItem(key, JSON.stringify(d[key]));
+    DB.load(); DB.products = DB.products.map((p) => ({ ...cleanProduct(p, p.sku), createdAt: p.createdAt })); DB.saveAll(); DB.rebuildDerived(); DB.applyTheme();
+    POS.cart = []; Shell.render(); Router.go(); Toast.success('Backup restored');
+  },
+  async reset() {
+    if (!(await Confirm.ask({ title: 'Erase all data?', message: 'This deletes every product, sale and setting on this device. This cannot be undone.', confirmText: 'Erase everything', danger: true, requireText: 'RESET' }))) return;
+    Object.values(LS).forEach((k) => localStorage.removeItem(k));
+    location.hash = '#/dashboard'; location.reload();
+  }
+};
+Actions['export-products'] = () => { download(`products-${stamp()}.json`, JSON.stringify({ app: APP_ID, type: 'products', exportedAt: new Date().toISOString(), categories: DB.categories, products: DB.products }, null, 2)); Toast.success('Products exported'); };
+Actions['export-sales'] = () => { download(`sales-${stamp()}.json`, JSON.stringify({ app: APP_ID, type: 'sales', exportedAt: new Date().toISOString(), sales: DB.sales }, null, 2)); Toast.success('Sales exported'); };
+Actions.backup = () => { download(`pos-backup-${stamp()}.json`, JSON.stringify(DataView.collectBackup(), null, 2)); Toast.success('Backup downloaded'); };
+Actions['reset-all'] = () => DataView.reset();
+Changes.importProducts = (el) => DataView.importProducts(el);
+Changes.restoreBackup = (el) => DataView.restore(el);
+
+
+/* ======================= 19. APP SHELL (sidebar, header, mobile nav) ======================= */
+const ROUTES = [
+  { id: 'dashboard', label: 'Dashboard', icon: 'home' },
+  { id: 'pos', label: 'POS Billing', icon: 'cart' },
+  { id: 'products', label: 'Products', icon: 'box' },
+  { id: 'sales', label: 'Sales History', icon: 'receipt' },
+  { id: 'reports', label: 'Reports', icon: 'chart' },
+  { id: 'settings', label: 'Settings', icon: 'sliders' },
+  { id: 'data', label: 'Backup', icon: 'database' }
+];
+const Views = { dashboard: Dashboard, pos: POS, products: ProductsView, sales: SalesView, reports: ReportsView, settings: SettingsView, data: DataView };
+
+const Router = {
+  current: 'dashboard',
+  init() { window.addEventListener('hashchange', () => this.go()); this.go(); },
+  go() {
+    const id = location.hash.replace(/^#\/?/, '') || 'dashboard';
+    this.current = Views[id] ? id : 'dashboard';
+    Shell.update();
+    Views[this.current].render();
+    window.scrollTo(0, 0);
+  },
+  to(id) { if (location.hash === '#/' + id) this.go(); else location.hash = '#/' + id; }
+};
+
+const Shell = {
+  render() {
+    const s = DB.settings, dark = DB.theme === 'dark';
+    const keep = $('#view'); // preserve the current page (and any typed input) when only the chrome changes
+    $('#app').innerHTML = `
+      <div class="pointer-events-none fixed inset-0 z-0 bg-[image:radial-gradient(60rem_40rem_at_top_right,rgba(220,38,38,0.16),transparent),radial-gradient(40rem_30rem_at_bottom_left,rgba(220,38,38,0.08),transparent)]"></div>
+      <aside class="fixed inset-y-0 left-0 z-20 hidden w-64 flex-col gap-2 border-r border-neutral-200/80 bg-white/70 p-4 backdrop-blur-xl lg:flex dark:border-white/10 dark:bg-black/40">
+        <div class="flex items-center gap-3 px-2 py-3">
+          ${s.logo ? `<img src="${esc(s.logo)}" alt="" class="h-11 w-11 rounded-xl bg-white object-contain p-0.5">` : `<span class="flex h-11 w-11 items-center justify-center rounded-xl bg-linear-to-br from-red-600 to-red-900 text-white shadow-lg shadow-red-600/30">${icon('gift', 'h-6 w-6')}</span>`}
+          <div class="min-w-0"><p class="truncate text-sm font-extrabold leading-tight">${esc(s.name)}</p><p class="text-[11px] ${C.muted}">Point of Sale</p></div>
+        </div>
+        <nav id="navDesktop" class="mt-2 flex flex-1 flex-col gap-1"></nav>
+        <button type="button" data-action="toggle-theme" class="${C.ghost} w-full justify-start">${icon(dark ? 'sun' : 'moon', 'h-4 w-4')} ${dark ? 'Light mode' : 'Dark mode'}</button>
+        <p class="px-2 pt-2 text-[11px] leading-snug ${C.muted}">Works offline · data is saved on this device</p>
+      </aside>
+      <div class="relative z-10 lg:pl-64">
+        <header class="sticky top-0 z-20 flex items-center justify-between gap-3 border-b border-neutral-200/80 bg-white/70 px-4 py-3 backdrop-blur-xl lg:px-6 dark:border-white/10 dark:bg-black/40">
+          <div class="flex min-w-0 items-center gap-3">
+            <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-red-600 text-white lg:hidden">${icon('gift', 'h-5 w-5')}</span>
+            <div class="min-w-0"><h1 id="pageTitle" class="truncate text-base font-extrabold leading-tight"></h1><p id="clock" class="text-[11px] ${C.muted}"></p></div>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <button type="button" data-action="show-shortcuts" class="${C.iconBtn} hidden sm:inline-flex" aria-label="Keyboard shortcuts" title="Keyboard shortcuts (?)">${icon('keyboard')}</button>
+            <button type="button" data-action="toggle-theme" class="${C.iconBtn} lg:hidden" aria-label="Toggle theme">${icon(dark ? 'sun' : 'moon')}</button>
+            <button type="button" data-action="nav" data-route="pos" class="${C.primary} py-2!">${icon('plus', 'h-4 w-4')} <span class="hidden sm:inline">New Sale</span></button>
+          </div>
+        </header>
+        <main id="view" class="p-4 pb-40 lg:p-6 lg:pb-10"></main>
+      </div>
+      <nav id="navMobile" class="fixed inset-x-0 bottom-0 z-30 flex gap-1 overflow-x-auto border-t border-neutral-200/80 bg-white/90 p-2 backdrop-blur-xl lg:hidden dark:border-white/10 dark:bg-neutral-950/90"></nav>`;
+    if (keep) $('#view').replaceWith(keep);
+    this.update(); this.tick();
+  },
+  update() {
+    const cur = Router.current, r = ROUTES.find((x) => x.id === cur);
+    const nd = $('#navDesktop'), nm = $('#navMobile');
+    if (nd) nd.innerHTML = ROUTES.map((x, i) => `
+      <button type="button" data-action="nav" data-route="${x.id}" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-semibold transition ${x.id === cur ? 'bg-red-600 text-white shadow-lg shadow-red-600/25' : 'text-neutral-600 hover:bg-neutral-200/70 dark:text-neutral-300 dark:hover:bg-white/10'}">
+        ${icon(x.icon, 'h-5 w-5')}<span class="flex-1 text-left">${x.label}</span><kbd class="rounded bg-black/10 px-1.5 text-[10px] font-medium opacity-60 dark:bg-white/10">Alt+${i + 1}</kbd></button>`).join('');
+    if (nm) nm.innerHTML = ROUTES.map((x) => `
+      <button type="button" data-action="nav" data-route="${x.id}" class="flex min-w-[4.5rem] shrink-0 flex-col items-center gap-0.5 rounded-xl px-2 py-1.5 text-[11px] font-semibold transition ${x.id === cur ? 'bg-red-600 text-white' : 'text-neutral-500 dark:text-neutral-400'}">${icon(x.icon, 'h-5 w-5')}${x.label.split(' ')[0]}</button>`).join('');
+    const t = $('#pageTitle'); if (t && r) t.textContent = r.label;
+  },
+  tick() { const el = $('#clock'); if (el) el.textContent = new Date().toLocaleString('en-GB', { weekday: 'short', day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' }); }
+};
+
+Actions['toggle-theme'] = () => { DB.theme = DB.theme === 'dark' ? 'light' : 'dark'; DB.applyTheme(); DB.save('theme'); Shell.render(); if (Router.current === 'settings') Router.go(); };
+Actions['show-shortcuts'] = () => {
+  const rows = [['F2', 'Focus product search / scan barcode'], ['F3', 'Focus cash received'], ['F4', 'Focus discount'], ['F8', 'Cancel current sale'], ['F9  or  Ctrl+Enter', 'Complete sale'],
+    ['Enter (in search)', 'Add product matching barcode / SKU'], ['Alt+1 … Alt+7', 'Switch between pages'], ['Esc', 'Close dialog'], ['?', 'Show this help']];
+  Modal.open(`${Modal.header('Keyboard shortcuts', 'Work faster at the counter')}<div class="p-5"><div class="${C.divider}">${rows.map(([k, d]) => `<div class="flex items-center justify-between gap-3 py-2.5 text-sm"><span>${d}</span><kbd class="shrink-0 rounded-lg bg-neutral-200 px-2.5 py-1 text-xs font-bold dark:bg-white/10">${k}</kbd></div>`).join('')}</div></div>`, { size: 'sm' });
+};
+
+/* ======================= 20. GLOBAL EVENTS & KEYBOARD SHORTCUTS ======================= */
+function bindEvents() {
+  document.addEventListener('click', (e) => {
+    const el = e.target.closest('[data-action]');
+    if (el && Actions[el.dataset.action]) { if (el.tagName === 'A') e.preventDefault(); Actions[el.dataset.action](el, e); }
+  });
+  document.addEventListener('input', (e) => { const el = e.target.closest('[data-input]'); if (el && Inputs[el.dataset.input]) Inputs[el.dataset.input](el, e); });
+  document.addEventListener('change', (e) => { const el = e.target.closest('[data-change]'); if (el && Changes[el.dataset.change]) Changes[el.dataset.change](el, e); });
+  document.addEventListener('submit', (e) => { const f = e.target.closest('[data-form]'); if (f && Forms[f.dataset.form]) { e.preventDefault(); Forms[f.dataset.form](f); } });
+
+  document.addEventListener('keydown', (e) => {
+    const tag = e.target.tagName, typing = tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT';
+    if (e.key === 'Escape') { if (Confirm.isOpen()) Confirm.done(false); else if (Modal.isOpen()) Modal.close(); return; }
+    if (Confirm.isOpen()) { if (e.key === 'Enter' && !$('#dialogOk').disabled) { e.preventDefault(); Confirm.done(true); } return; }
+    if (e.altKey && /^Digit[1-7]$/.test(e.code)) { e.preventDefault(); Router.to(ROUTES[+e.code.slice(5) - 1].id); return; }
+    if (e.key === '?' && !typing && !Modal.isOpen()) { e.preventDefault(); Actions['show-shortcuts'](); return; }
+    if (Modal.isOpen()) return;
+
+    const focusPOS = (id) => { const go = () => { const el = $(id); if (el) { el.focus(); if (el.select) el.select(); } }; if (Router.current !== 'pos') { Router.to('pos'); setTimeout(go, 60); } else go(); };
+    if (e.key === 'F2') { e.preventDefault(); focusPOS('#posSearch'); }
+    else if (e.key === 'F3') { e.preventDefault(); focusPOS('#posCash'); }
+    else if (e.key === 'F4') { e.preventDefault(); focusPOS('#posDiscount'); }
+    else if (e.key === 'F8' && Router.current === 'pos') { e.preventDefault(); POS.cancel(); }
+    else if ((e.key === 'F9' || (e.key === 'Enter' && e.ctrlKey)) && Router.current === 'pos') { e.preventDefault(); POS.complete(); }
+    else if (e.key === 'Enter' && e.target.id === 'posSearch') { e.preventDefault(); POS.q = e.target.value; POS.submitSearch(); }
+  });
+}
+
+/* ======================= 21. BOOT ======================= */
+const App = {
+  init() {
+    DB.load();
+    if (DB.firstRun()) { DB.saveAll(); DB.rebuildDerived(); }
+    DB.applyTheme();
+    Shell.render(); bindEvents(); Router.init();
+    setInterval(() => Shell.tick(), 30000);
+    setTimeout(() => {
+      const b = $('#boot'); if (!b) return;
+      b.classList.add('opacity-0', 'pointer-events-none'); setTimeout(() => b.remove(), 520);
+    }, 450);
+  }
+};
+document.addEventListener('DOMContentLoaded', () => App.init());
+
+</script>
+</body>
+</html>
