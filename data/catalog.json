@@ -1,0 +1,46 @@
+{
+  "settings": {
+    "shopName": "Mathaka Gift Shop",
+    "tagline": "Gift More Than Just Things…",
+    "taglineSi": "ඔබේ මතකයන්ට ආදරණීය රාමුවක්…",
+    "logo": "images/logo.png",
+    "whatsapp": "94742899909",
+    "facebook": "https://www.facebook.com/mathakagift/",
+    "phone": "",
+    "phone2": "",
+    "email": "",
+    "address": "",
+    "announcement": "",
+    "deliveryNote": "Delivery charges will be confirmed with you on WhatsApp."
+  },
+  "categories": [
+    { "id": "photo-collages", "name": "Photo Collages", "active": true, "order": 0 },
+    { "id": "mugs", "name": "Mugs", "active": true, "order": 1 },
+    { "id": "polaroid-prints", "name": "Polaroid Prints", "active": true, "order": 2 },
+    { "id": "gift-items", "name": "Gift Items", "active": true, "order": 3 }
+  ],
+  "products": [
+    {
+      "code": "POLAROID-PRINT",
+      "name": "Custom Polaroid Photo Prints",
+      "categoryId": "polaroid-prints",
+      "price": null,
+      "description": "Turn your favourite photos into custom Polaroid-style prints. Choose a style below, add it to your cart, then send us your photos in the same WhatsApp chat after you send your order.",
+      "stock": "made_to_order",
+      "stockQty": null,
+      "minQty": 1,
+      "active": true,
+      "customPrint": true,
+      "images": [],
+      "note": "After sending your order on WhatsApp, send the photos you want printed in the same chat.",
+      "options": [
+        { "id": "mini", "label": "Mini", "size": "", "price": null, "minQty": 1 },
+        { "id": "large", "label": "Large", "size": "", "price": null, "minQty": 1 },
+        { "id": "strip", "label": "Strip", "size": "", "price": null, "minQty": 1 },
+        { "id": "classic", "label": "Classic", "size": "", "price": null, "minQty": 1 }
+      ]
+    }
+  ],
+  "topProducts": [],
+  "banners": []
+}
